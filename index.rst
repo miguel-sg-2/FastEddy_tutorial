@@ -1,7 +1,7 @@
 FastEddy Tutorial
 =================
 
-This is 
+FastEddy is a resident-GPU large eddy simulation model...
 
 `Overview of FastEddy`_
 
