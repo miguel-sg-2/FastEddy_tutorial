@@ -7,6 +7,16 @@ FastEddy is a resident-GPU large eddy simulation model...
 
 .. _Overview of FastEddy: https://ral.ucar.edu/solutions/products/fasteddy
 
+.. toctree::
+  :caption: THEORY
+  :maxdepth: 1
+  :hidden:
+  
+.. toctree::
+  :caption: IMPLEMENTATION
+  :maxdepth: 1
+  :hidden: 
+
 1. Downloading the code
 -----------------------
 
