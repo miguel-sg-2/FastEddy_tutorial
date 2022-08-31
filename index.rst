@@ -1,3 +1,14 @@
+FastEddy Tutorial
+=================
+
+FastEddy is a resident-GPU large eddy simulation model...
+
+`Overview of FastEddy`_
+
+.. _Overview of FastEddy: https://ral.ucar.edu/solutions/products/fasteddy
+
+/* front page: hide chapter titles * needed for consistent HTML-PDF-EPUB chapters */ div#userguide.section, div#theory.section, div#implementation.section, div#goals.section,
+
 .. toctree::
    :hidden:
 
@@ -14,18 +25,3 @@
   :caption: IMPLEMENTATION
   :maxdepth: 1
   :hidden: 
-
-FastEddy Tutorial
-=================
-
-FastEddy is a resident-GPU large eddy simulation model...
-
-`Overview of FastEddy`_
-
-.. _Overview of FastEddy: https://ral.ucar.edu/solutions/products/fasteddy
-
-1. Downloading the code
------------------------
-
-2. Setting up the test case
----------------------------
