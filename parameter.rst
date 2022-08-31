@@ -4,7 +4,7 @@ Description of parameter input file
 Here, we can describe all parameters in the public release version of FE.
 
 .. list-table:: FastEddy parameters
-   :widths: 25 25 50
+   :widths: 25 25 
    :header-rows: 1
 
    * - Heading row 1, column 1
