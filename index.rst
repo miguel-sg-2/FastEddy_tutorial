@@ -9,30 +9,25 @@ FastEddy
 
 .. toctree::
   :caption: USER GUIDE
-  :maxdepth: 2
   
   user.rst
   
 .. toctree::
   :caption: TUTORIAL
-  :maxdepth: 2
   
   tutorial.rst
   
 .. toctree::
   :caption: THEORY
-  :maxdepth: 2
   
   theory.rst
   
 .. toctree::
   :caption: NUMERICS
-  :maxdepth: 2
 
   numerics.rst
   
 .. toctree::
   :caption: BOUNDARY CONDITIONS
-  :maxdepth: 2
 
   boundary.rst
