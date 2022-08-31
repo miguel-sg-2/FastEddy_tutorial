@@ -26,6 +26,23 @@ Edit the parameter file
 Execute the model
 =================
 
+1. mkdir /glade/scratch/${USER}/FastEddy/simtest/
+2. cd /glade/scratch/${USER}/FastEddy/simtest/
+3. mkdir output
+4. Create PBS submission script ('submit-FE-pbs')
+
+#PBS -N FastEddy 
+#PBS -A <CHARGE ACCCOUNT>
+#PBS -l select=1:ncpus=1:mpiprocs=1:ngpus=1:mem=100GB
+#PBS -l gpu_type=v100
+#PBS -l walltime=02:00:00
+#PBS -q casper
+#PBS -j oe
+mpirun /glade/scratch/${USER}/FastEddy/vtest/SRC/TIME_INTEGRATION/TEST/timeInt_test testparam.in    
+
+5. chmod a+x submit-FE-pbs
+6. qsub < submit-FE-pbs
+
 Visualize the output
 ====================
 
