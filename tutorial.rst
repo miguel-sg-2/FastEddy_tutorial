@@ -31,6 +31,7 @@ Execute the model
 3. mkdir output
 4. Create PBS submission script ('submit-FE-pbs')
 
+.. code-block:: ruby.
 #PBS -N FastEddy 
 #PBS -A <CHARGE ACCCOUNT>
 #PBS -l select=1:ncpus=1:mpiprocs=1:ngpus=1:mem=100GB
