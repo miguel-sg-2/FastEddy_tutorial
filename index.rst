@@ -31,3 +31,13 @@ FastEddy
   :caption: BOUNDARY CONDITIONS
 
   boundary.rst
+  
+.. toctree::
+  :caption: PARAMETER FILE
+
+  parameter.rst 
+  
+.. toctree::
+  :caption: OUTPUT FILES
+
+  output.rst 
