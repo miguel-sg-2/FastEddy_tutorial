@@ -26,12 +26,12 @@ Edit the parameter file
 Execute the model
 =================
 
-1. mkdir /glade/scratch/${USER}/FastEddy/simtest/
-2. cd /glade/scratch/${USER}/FastEddy/simtest/
+1. mkdir /glade/scratch/${USER}/FastEddy/simulations/neutralPBL
+2. cd /glade/scratch/${USER}/FastEddy/simulations/neutralPBL
 3. mkdir output
 4. Create PBS submission script ('submit-FE-pbs')
 
-.. highlight:: bash
+.. code-block:: bash
   #PBS -N FastEddy 
   #PBS -A <CHARGE ACCCOUNT>
   #PBS -l select=1:ncpus=1:mpiprocs=1:ngpus=1:mem=100GB
@@ -40,7 +40,7 @@ Execute the model
   #PBS -q casper
   #PBS -j oe
   
-  mpirun /glade/scratch/${USER}/FastEddy/vtest/SRC/TIME_INTEGRATION/TEST/timeInt_test testparam.in    
+  mpirun /glade/scratch/${USER}/FastEddy/vtest/SRC/TIME_INTEGRATION/TEST/timeInt_test TEST_Params.in    
 
 5. chmod a+x submit-FE-pbs
 6. qsub < submit-FE-pbs
