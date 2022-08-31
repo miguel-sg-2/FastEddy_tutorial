@@ -12,6 +12,8 @@ FastEddy is a resident-GPU large eddy simulation model...
   :maxdepth: 1
   :hidden:
   
+  theory.rst
+  
 .. toctree::
   :caption: IMPLEMENTATION
   :maxdepth: 1
