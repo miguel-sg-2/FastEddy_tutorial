@@ -20,9 +20,6 @@ The procedure below describes the procedure to build the code on the NCAR `Caspe
 13. make
 14. ls -ltr (check to make sure executable file named timeInt_test is created)
 
-Edit the parameter file
-=======================
-
 Execute the model
 =================
 
@@ -30,6 +27,7 @@ Execute the model
 2. cd /glade/scratch/${USER}/FastEddy/simulations/neutralPBL
 3. mkdir output
 4. Create PBS submission script ('submit-FE-pbs')
+5. cp /glade/scratch/${USER}/FastEddy/vtest/SRC/TIME_INTEGRATION/TEST/TEST_Params.in . (note the tutorial neutral test case needs to be added here)
 
 .. code-block:: bash
 
@@ -49,5 +47,19 @@ Execute the model
 Visualize the output
 ====================
 
+Here we will have the user go through a Jupyter notebook to make some key plots (use Domingo's notebook as a starting point)
+
 Analyze the output
 ==================
+
+Here we will ask some basic questions about the plots to gain an understanding of the simulation
+
+Modify the parameter file
+=========================
+
+Here, the user will make some modifications to the default parameters such as changing the grid spacing, stretching, model time step, advection scheme, number of grid points, domain decomposition and number of GPUs, etc, etc.
+
+Execute the sensitivity test and examine output
+===============================================
+
+Here, the user will execute the sensitivity test, and visualize and analyze the output
