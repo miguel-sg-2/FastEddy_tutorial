@@ -7,9 +7,9 @@ Here, we can describe all parameters in the public release version of FE.
    :widths: 25 25 50
    :header-rows: 1
 
-   * - Heading row 1, column 1
-     - Heading row 1, column 2
-     - Heading row 1, column 3
+   * - Parameter name
+     - Type
+     - Description
    * - Row 1, column 1
      -
      - Row 1, column 3
