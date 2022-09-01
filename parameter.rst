@@ -1,4 +1,4 @@
-Description of parameter input file
+Description of FE parameter input file
 ===================================
 
 Here, we can describe all parameters in the public release version of FE.
