@@ -8,11 +8,11 @@ Here, we can describe all parameters in the public release version of FE.
    :header-rows: 1
 
    * - Parameter name
-     - Type
      - Description
-   * - Row 1, column 1
-     -
-     - Row 1, column 3
-   * - Row 2, column 1
-     - Row 2, column 2
-     - Row 2, column 3
+     - Type
+   * - numProcsX
+     - Number of MPI ranks used to decompose x-direction
+     - integer
+   * - numProcsY
+     - Number of MPI ranks used to decompose y-direction
+     - integer
