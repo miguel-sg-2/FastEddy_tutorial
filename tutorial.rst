@@ -26,8 +26,8 @@ Execute the model
 1. mkdir /glade/scratch/${USER}/FastEddy/simulations/neutralPBL
 2. cd /glade/scratch/${USER}/FastEddy/simulations/neutralPBL
 3. mkdir output
-4. Create PBS submission script ('submit-FE-pbs')
-5. cp /glade/scratch/${USER}/FastEddy/vtest/SRC/TIME_INTEGRATION/TEST/TEST_Params.in . (note the tutorial neutral test case needs to be added here)
+4. cp /glade/scratch/${USER}/FastEddy/vtest/SRC/TIME_INTEGRATION/TEST/TEST_Params.in . (note the tutorial neutral test case needs to be added here)
+5. Create PBS submission script ('submit-FE-pbs')
 
 .. code-block:: bash
 
