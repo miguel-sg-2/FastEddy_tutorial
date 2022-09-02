@@ -1,6 +1,0 @@
-Model equations
-=================
-
-Physical parameterizations
-==========================
-
