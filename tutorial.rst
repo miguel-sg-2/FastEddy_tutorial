@@ -14,20 +14,13 @@ Input parameters
 * Domain size: :math:`4 km \times 4 km \times 1.2 km`
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
 * Latitude: :math:`54.0` N
-* Potential temperature gradients: The potential temperature is constant from the surface to :math:`z=` 500 m. Between :math:`500-650` m, the vertical gradient of theta is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient of potential temperature is :math:`0.003` K/m.
-* Surface heat flux:  :math:`0.0` W/m/m
+* Potential temperature gradients: The potential temperature is constant from the surface to :math:`z= 500` m. Between :math:`500-650` m, the vertical gradient of theta is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient of potential temperature is :math:`0.003` K/m.
+* Surface heat flux:  :math:`0.0 W/m^2`
 * Surface roughness length: :math:`z_0=0.1` m
 * Rayleigh damping layer: uppermost :math:`400` m of the domain
 * Cell perturbations: :math:`\pm 0.25` K are added in the first :math:`400` m
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-
-
-:math:`x^2+y^2=z^2`
-
-.. math::
-
-   \frac{ \sum_{t=0}^{N}f(t,k) }{N}
 
 Execute FastEddy
 ----------------
@@ -83,6 +76,13 @@ Here, the user will make some modifications to the default parameters such as ch
 
 Background
 ----------
+
+:math:`x^2+y^2=z^2`
+
+.. math::
+
+   \frac{ \sum_{t=0}^{N}f(t,k) }{N}
+
 
 Input parameters
 ----------------
