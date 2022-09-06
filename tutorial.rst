@@ -14,7 +14,7 @@ Input parameters
 * Domain size: :math:`4 km \times 4 km \times 1.2 km`
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
 * Latitude: :math:`54.0` N
-* Potential temperature gradients: The potential temperature is constant from the surface to :math:`z= 500` m. Between :math:`500-650` m, the vertical gradient of theta is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient of potential temperature is :math:`0.003` K/m.
+* Potential temperature gradients: The potential temperature is constant from the surface to :math:`z= 500` m. Between :math:`500-650` m, the vertical gradient is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient is :math:`0.003` K/m.
 * Surface heat flux:  :math:`0.0 W/m^2`
 * Surface roughness length: :math:`z_0=0.1` m
 * Rayleigh damping layer: uppermost :math:`400` m of the domain
