@@ -10,7 +10,7 @@ Input parameters
 ----------------
 
 The number of grid points are :math:`[N_x,N_y,N_z]=[800,800,122]`. The isotropic grid spacings are :math:`[dx,dy,dz]=[5,5,5] m.` The domain extents are
-:math:`4 km X 4 km X 1.2 km`. The latitude is 54.0 N. The geostrophic wind is :math:`[U_g,V_g]=[10,0]` m/s. The surface roughness length is :math:`z_0=0.1` m. There is zero surface kinematic heat flux. The potential temperature is constant from the surface to :math:`z=` 500 m. Between 500-650 m, the vertical gradient of theta is 0.08 K/m. Above 650 m, the vertical gradient of potential temperature is 0.003 K/m. A Rayleigh damping layer is applied in the uppermost 400 m of the domain. Cell perturbations of +/-0.25 K are added in the first 400 m of the domain to instigate turbulence. Periodic lateral boundary conditions are applied the top boundary is free slip.
+:math:`4 km \times 4 km \times 1.2 km`. The latitude is :math:`54.0` N. The geostrophic wind is :math:`[U_g,V_g]=[10,0]` m/s. The surface roughness length is :math:`z_0=0.1` m. There is zero surface kinematic heat flux. The potential temperature is constant from the surface to :math:`z=` 500 m. Between :math:`500-650` m, the vertical gradient of theta is :math:`0.08` K/m. Above 650 m, the vertical gradient of potential temperature is :math:`0.003` K/m. A Rayleigh damping layer is applied in the uppermost :math:`400` m of the domain. Cell perturbations of :math:` \pm 0.25` K are added in the first :math:`400` m of the domain to instigate turbulence. Periodic lateral boundary conditions are applied the top boundary is free slip.
 
 :math:`x^2+y^2=z^2`
 
