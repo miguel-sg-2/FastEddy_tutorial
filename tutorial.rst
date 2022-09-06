@@ -9,12 +9,19 @@ This is a canonical neutral boundary layer scenario described by Sauer and Munoz
 Input parameters
 ----------------
 
-The number of grid points are :math:`[N_x,N_y,N_z]=[800,800,122]`. The isotropic grid spacings are :math:`[dx,dy,dz]=[5,5,5] m.` The domain extents are
-:math:`4 km \times 4 km \times 1.2 km`. The latitude is :math:`54.0` N. The geostrophic wind is :math:`[U_g,V_g]=[10,0]` m/s. The surface roughness length is :math:`z_0=0.1` m. There is zero surface kinematic heat flux. The potential temperature is constant from the surface to :math:`z=` 500 m. Between :math:`500-650` m, the vertical gradient of theta is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient of potential temperature is :math:`0.003` K/m. A Rayleigh damping layer is applied in the uppermost :math:`400` m of the domain. Cell perturbations of :math:`\pm 0.25` K are added in the first :math:`400` m of the domain to instigate turbulence. Periodic lateral boundary conditions are applied the top boundary is free slip.
+* Number of grid points: :math:`[N_x,N_y,N_z]=[800,800,122]`
+* Isotropic grid spacings: :math:`[N_x,N_y,N_z]=[800,800,122]`
+* Domain size: :math:`4 km \times 4 km \times 1.2 km`
+* Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
+* Latitude: :math:`54.0` N
+* Potential temperature gradients: The potential temperature is constant from the surface to :math:`z=` 500 m. Between :math:`500-650` m, the vertical gradient of theta is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient of potential temperature is :math:`0.003` K/m.
+* Surface heat flux:  :math:`0.0` W/m/m
+* Surface roughness length: :math:`z_0=0.1` m
+* Rayleigh damping layer: uppermost :math:`400` m of the domain
+* Cell perturbations: :math:`\pm 0.25` K are added in the first :math:`400` m
+* Top boundary condition: free slip
+* Lateral boundary conditions: periodic
 
-
-* The number of grid points are :math:`[N_x,N_y,N_z]=[800,800,122]`
-* The number of grid points are :math:`[N_x,N_y,N_z]=[800,800,122]`
 
 :math:`x^2+y^2=z^2`
 
