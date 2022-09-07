@@ -134,6 +134,18 @@ Here we will describe how to download the FastEddy executable files and run the 
 Visualize the output
 --------------------
 
+XY-plane views of instantaneous velocity components at t=2 h (FE_TEST.1440000).
+
+.. image:: notebooks/UVW-XY-stable.png
+  :width: 1200
+  :alt: Alternative text
+  
+XZ-plane views of instantaneous velocity components at t=2 h (FE_TEST.1440000).
+
+.. image:: notebooks/UVW-XZ-stable.png
+  :width: 800
+  :alt: Alternative text
+
 Analyze the output
 ------------------
 
