@@ -77,8 +77,27 @@ Input parameters
 Execute FastEddy
 ----------------
 
+Here we will describe how to download the FastEddy executable files and run the model
+
 Visualize the output
 --------------------
+
+XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
+
+.. image:: notebooks/UVW-XY-convective.png
+  :width: 1200
+  :alt: Alternative text
+  
+XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
+
+.. image:: notebooks/UVW-XZ-convective.png
+  :width: 800
+  :alt: Alternative text
+
+Analyze the output
+------------------
+
+Here we will ask some questions about interpreting the output of FastEddy
 
 CASE 3: STABLE BOUNDARY LAYER
 =============================
@@ -86,7 +105,7 @@ CASE 3: STABLE BOUNDARY LAYER
 Background
 ------------------
 
-This is the stable boundary layer scenario described by Sauer and Munoz-Esparza (2020). This the stable boundary layer scenario outlined in Kosovic´ and Curry (2000).
+This is the stable boundary layer scenario described by Sauer and Munoz-Esparza (2020). This the stable boundary layer scenario outlined in Kosovic and Curry (2000).
 
 Input parameters
 ----------------
@@ -110,12 +129,15 @@ Input parameters
 Execute FastEddy
 ----------------
 
+Here we will describe how to download the FastEddy executable files and run the model
+
 Visualize the output
 --------------------
 
 Analyze the output
 ------------------
 
+Here we will ask some questions about interpreting the output of FastEddy
 
 CASE 4: SENSITIVITY TEST
 ========================
