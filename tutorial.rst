@@ -42,7 +42,7 @@ XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 
 .. image:: notebooks/UVW-XZ-neutral.png
-  :width: 600
+  :width: 800
   :alt: Alternative text
 
 Analyze the output
