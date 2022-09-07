@@ -28,6 +28,8 @@ Input parameters
 Execute FastEddy
 ----------------
 
+Here we will describe how to download the FastEddy executable files and run the model
+
 Visualize the output
 --------------------
 
@@ -46,6 +48,7 @@ XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 Analyze the output
 ------------------
 
+Here we will ask some questions about interpreting the output of FastEddy
 
 CASE 2: CONVECTIVE BOUNDARY LAYER
 ==================================
