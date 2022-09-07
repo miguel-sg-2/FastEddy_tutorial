@@ -13,6 +13,7 @@ Input parameters
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[5,5,5]`
 * Domain size: :math:`4 km \times 4 km \times 1.2 km`
 * Advection scheme: 3rd order QUICK
+* Time scheme: 3rd order Runge Kutta
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
 * Latitude: :math:`54.0` N
 * Potential temperature gradients: The potential temperature is constant at 300 K from the surface to :math:`z= 500` m. Between :math:`500-650` m, the vertical gradient is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient is :math:`0.003` K/m.
@@ -30,9 +31,13 @@ Execute FastEddy
 Visualize the output
 --------------------
 
+XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
+
 .. image:: notebooks/UVW.png
   :width: 1200
   :alt: Alternative text
+  
+XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 
 
 Analyze the output
@@ -42,17 +47,17 @@ Analyze the output
 CASE 2: CONVECTIVE BOUNDARY LAYER
 ==================================
 
-This is the convective boundary layer scenario described by Sauer and Munoz-Esparza (2020). Give overview... 4 July 2012 during the period of 18Z-20Z
-(12:00–14:00 local time), the strongest period of convection on the day.
+This is the convective boundary layer scenario described by Sauer and Munoz-Esparza (2020). This case represents the boundary layer conditions at the SWiFT facility near Lubbock, Texas at 4 July 2012 during the period of 18Z-20Z (12:00–14:00 local time), the strongest period of convection on the day.
 
 Input parameters
 ----------------
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[N,N,N]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[5,5,5]`
-* Domain size: :math:`6 km \times 6 km \times 3 km`
+* Domain size: :math:`4 km \times 4 km \times 1.2 km` (note will change to :math:`6 km \times 6 km \times 3 km`)
 * Geostrophic wind: :math:`[U_g,V_g]=[8,0]` m/s
-* Advection scheme: Hybrid 5th-6th order, blending 0.8
+* Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
+* Time scheme: 3rd order Runge Kutta
 * Latitude: :math:`33.5` N
 * Potential temperature gradients: The potential temperature is constant at 309 K from the surface to :math:`z= 500` m. Above that the vertical gradient is :math:`0.004` K/m. 
 * Surface heat flux:  :math:`0.35 Km/s`
@@ -72,10 +77,10 @@ Visualize the output
 CASE 3: STABLE BOUNDARY LAYER
 =============================
 
-Analyze the output
+Background
 ------------------
 
-This is the stable boundary layer scenario described by Sauer and Munoz-Esparza (2020). Give overview... LES model intercomparison of Beare et al. (2006) as a basis. This previous work was part of the well known, Global Energy and Water Cycle Experiment, or GEWEX Atmospheric Boundary Layer Study (GABLS) initiative described in Holtslag (2006). Specifically, the previous work leveraged here focused on LES model intercomparison of the stable boundary layer scenario outlined in Kosovic´ and Curry (2000).
+This is the stable boundary layer scenario described by Sauer and Munoz-Esparza (2020). This the stable boundary layer scenario outlined in Kosovic´ and Curry (2000).
 
 Input parameters
 ----------------
@@ -84,7 +89,8 @@ Input parameters
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[3.125,3.125,3.125]`
 * Domain size: :math:`0.4 km \times 0.4 km \times 0.4 km`
 * Geostrophic wind: :math:`[U_g,V_g]=[9,0]` m/s
-* Advection scheme: Hybrid 5th-6th order, blending 0.8
+* Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
+* Time scheme: 3rd order Runge Kutta
 * Latitude: :math:`72.5` N
 * Potential temperature gradients: The potential temperature is constant at 265 K from the surface to :math:`z= 100` m. Above that the vertical gradient is :math:`0.01` K/m. 
 * Surface heat flux:  :math:`-0.25 K/h`
