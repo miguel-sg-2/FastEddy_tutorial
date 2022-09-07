@@ -44,7 +44,7 @@ XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 
 .. image:: notebooks/UVW-XZ-neutral.png
-  :width: 800
+  :width: 600
   :alt: Alternative text
   
 Other plots TBD...
@@ -94,7 +94,7 @@ XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 
 .. image:: notebooks/UVW-XZ-convective.png
-  :width: 800
+  :width: 600
   :alt: Alternative text
 
 Analyze the output
@@ -145,7 +145,7 @@ XY-plane views of instantaneous velocity components at t=2 h (FE_TEST.1440000).
 XZ-plane views of instantaneous velocity components at t=2 h (FE_TEST.1440000).
 
 .. image:: notebooks/UVW-XZ-stable.png
-  :width: 800
+  :width: 600
   :alt: Alternative text
 
 Analyze the output
