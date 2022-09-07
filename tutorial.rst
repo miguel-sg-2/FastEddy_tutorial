@@ -24,6 +24,7 @@ Input parameters
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
 * Time period: 2 hours
+* Model time step: 0.01 s
 
 Execute FastEddy
 ----------------
@@ -62,9 +63,9 @@ This is the convective boundary layer scenario described by Sauer and Munoz-Espa
 Input parameters
 ----------------
 
-* Number of grid points: :math:`[N_x,N_y,N_z]=[N,N,N]`
-* Isotropic grid spacings: :math:`[dx,dy,dz]=[5,5,5]`
-* Domain size: :math:`4 km \times 4 km \times 1.2 km` (note will change to :math:`6 km \times 6 km \times 3 km`)
+* Number of grid points: :math:`[N_x,N_y,N_z]=[600,600,122]`
+* Isotropic grid spacings: :math:`[dx,dy,dz]=[10,10,10]`
+* Domain size: :math:`6 km \times 6 km \times 2.9 km` 
 * Geostrophic wind: :math:`[U_g,V_g]=[8,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
@@ -76,7 +77,8 @@ Input parameters
 * Cell perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-* Time period: 2 hours
+* Time period: 6 hours
+* Model time step: 0.02 s
 
 Here we will describe how to download the FastEddy package and run the model. The package will include the executables, a script to install the executables in a directory structure, and other files such as the Jupyter notebooks.
 
@@ -127,7 +129,8 @@ Input parameters
 * Cell perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-* Time period: 3 hours
+* Time period: 2 hours
+* Model time step: 0.005 s
 
 Here we will describe how to download the FastEddy package and run the model. The package will include the executables, a script to install the executables in a directory structure, and other files such as the Jupyter notebooks.
 
