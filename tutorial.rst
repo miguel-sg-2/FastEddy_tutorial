@@ -33,12 +33,15 @@ Visualize the output
 
 XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 
-.. image:: notebooks/UVW.png
+.. image:: notebooks/UVW-XY-neutral.png
   :width: 1200
   :alt: Alternative text
   
 XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 
+.. image:: notebooks/UVW-XZ-neutral.png
+  :width: 600
+  :alt: Alternative text
 
 Analyze the output
 ------------------
