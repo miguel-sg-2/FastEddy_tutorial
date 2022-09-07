@@ -87,13 +87,13 @@ Visualize the output
 
 Open the Jupyter notebook entitled "FE-TUTORIAL-analyses.ipynb" and execute it. Please ensure you create the plots exactly as shown below.
 
-XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
+XY-plane views of instantaneous velocity components at t=0.6 h (FE_TEST.108000).
 
 .. image:: notebooks/UVW-XY-convective.png
   :width: 1200
   :alt: Alternative text
   
-XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
+XZ-plane views of instantaneous velocity components at t=0.6 h (FE_TEST.108000).
 
 .. image:: notebooks/UVW-XZ-convective.png
   :width: 600
