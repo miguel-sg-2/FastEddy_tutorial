@@ -19,7 +19,7 @@ Input parameters
 * Surface heat flux:  :math:`0.0 W/m^2`
 * Surface roughness length: :math:`z_0=0.1` m
 * Rayleigh damping layer: uppermost :math:`400` m of the domain
-* Cell perturbations: :math:`\pm 0.25` K are added in the first :math:`400` m
+* Cell perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
 * Time period: 2 hours
@@ -53,7 +53,7 @@ Input parameters
 * Surface heat flux:  :math:`0.35 Km/s`
 * Surface roughness length: :math:`z_0=0.05` m
 * Rayleigh damping layer: uppermost :math:`600` m of the domain
-* Cell perturbations: :math:`\pm 0.25` K are added in the first :math:`400` m
+* Cell perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
 * Time period: 2 hours
@@ -85,7 +85,7 @@ Input parameters
 * Surface heat flux:  :math:`-0.25 K/h`
 * Surface roughness length: :math:`z_0=0.05` m
 * Rayleigh damping layer: uppermost :math:`100` m of the domain
-* Cell perturbations: :math:`\pm 0.25` K are added in the first :math:`400` m
+* Cell perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
 * Time period: 3 hours
