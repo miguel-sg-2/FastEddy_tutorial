@@ -30,6 +30,11 @@ Execute FastEddy
 Visualize the output
 --------------------
 
+.. image:: images/UVW.png
+  :width: 400
+  :alt: Alternative text
+
+
 Analyze the output
 ------------------
 
