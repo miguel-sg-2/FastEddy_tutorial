@@ -28,10 +28,12 @@ Input parameters
 Execute FastEddy
 ----------------
 
-Here we will describe how to download the FastEddy executable files and run the model
+Here we will describe how to download the FastEddy package and run the model. The package will include the executables, a script to install the executables in a directory structure, and other files such as the Jupyter notebooks.
 
 Visualize the output
 --------------------
+
+Open the Jupyter notebook entitled "FE-TUTORIAL-analyses.ipynb" and execute it. Please ensure you create the plots exactly as shown below.
 
 XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 
@@ -44,6 +46,8 @@ XZ-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 .. image:: notebooks/UVW-XZ-neutral.png
   :width: 800
   :alt: Alternative text
+  
+Other plots TBD...
 
 Analyze the output
 ------------------
@@ -74,13 +78,12 @@ Input parameters
 * Lateral boundary conditions: periodic
 * Time period: 2 hours
 
-Execute FastEddy
-----------------
-
-Here we will describe how to download the FastEddy executable files and run the model
+Here we will describe how to download the FastEddy package and run the model. The package will include the executables, a script to install the executables in a directory structure, and other files such as the Jupyter notebooks.
 
 Visualize the output
 --------------------
+
+Open the Jupyter notebook entitled "FE-TUTORIAL-analyses.ipynb" and execute it. Please ensure you create the plots exactly as shown below.
 
 XY-plane views of instantaneous velocity components at t=1.6 h (FE_TEST.528000).
 
@@ -126,13 +129,12 @@ Input parameters
 * Lateral boundary conditions: periodic
 * Time period: 3 hours
 
-Execute FastEddy
-----------------
-
-Here we will describe how to download the FastEddy executable files and run the model
+Here we will describe how to download the FastEddy package and run the model. The package will include the executables, a script to install the executables in a directory structure, and other files such as the Jupyter notebooks.
 
 Visualize the output
 --------------------
+
+Open the Jupyter notebook entitled "FE-TUTORIAL-analyses.ipynb" and execute it. Please ensure you create the plots exactly as shown below.
 
 XY-plane views of instantaneous velocity components at t=2 h (FE_TEST.1440000).
 
