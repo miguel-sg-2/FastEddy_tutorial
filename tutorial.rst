@@ -30,7 +30,7 @@ Execute FastEddy
 Visualize the output
 --------------------
 
-.. image:: images/UVW.png
+.. image:: notebooks/UVW.png
   :width: 400
   :alt: Alternative text
 
