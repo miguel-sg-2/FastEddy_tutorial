@@ -31,7 +31,7 @@ Visualize the output
 --------------------
 
 .. image:: notebooks/UVW.png
-  :width: 400
+  :width: 1200
   :alt: Alternative text
 
 
