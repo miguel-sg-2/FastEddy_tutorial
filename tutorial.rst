@@ -11,7 +11,7 @@ Input parameters
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[800,800,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[5,5,5]`
-* Domain size: :math:`4 \times 4 \times 1.2` km
+* Domain size: :math:`[4 \times 4 \times 1.2]` km
 * Advection scheme: 3rd order QUICK
 * Time scheme: 3rd order Runge Kutta
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
@@ -65,7 +65,7 @@ Input parameters
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[600,600,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[10,10,10]`
-* Domain size: :math:`6 \times 6 \times 2.9` km
+* Domain size: :math:`[6 \times 6 \times 2.9]` km
 * Geostrophic wind: :math:`[U_g,V_g]=[8,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
@@ -117,13 +117,13 @@ Input parameters
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[128,128,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[3.125,3.125,3.125]`
-* Domain size: :math:`0.4 \times 0.4 \times 0.4` km
+* Domain size: :math:`[0.4 \times 0.4 \times 0.4]` km
 * Geostrophic wind: :math:`[U_g,V_g]=[9,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
 * Latitude: :math:`72.5` N
 * Potential temperature gradients: The potential temperature is constant at 265 K from the surface to :math:`z= 100` m. Above that the vertical gradient is :math:`0.01` K/m. 
-* Surface heat flux:  :math:`-0.25 K/h`
+* Surface heat flux:  :math:`-0.25` K/h
 * Surface roughness length: :math:`z_0=0.05` m
 * Rayleigh damping layer: uppermost :math:`100` m of the domain
 * Cell perturbations: :math:`\pm 0.25` K 
