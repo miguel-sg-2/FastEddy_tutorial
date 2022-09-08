@@ -1,5 +1,5 @@
-CASE 1: NEUTRAL BOUNDARY LAYER
-===============================
+CASE 1: DRY NEUTRAL BOUNDARY LAYER
+==================================
 
 Background
 ----------
@@ -61,11 +61,11 @@ Analyze the output
 
 * Using the XY and XZ cross sections, discuss the characteristics of the resolved turbulence.
 * What is the boundary layer height in the neutral case?
-* Is the boundary layer stable, neutral, or unstable? Why?
+* Using the vertical profile plots, explain why the boundary layer is neutral.
 * Other...
 
-CASE 2: CONVECTIVE BOUNDARY LAYER
-==================================
+CASE 2: DRY CONVECTIVE BOUNDARY LAYER
+=====================================
 
 This is the convective boundary layer scenario described by Sauer and Munoz-Esparza (2020). This case represents the boundary layer conditions at the SWiFT facility near Lubbock, Texas at 4 July 2012 during the period of 18Z-20Z (12:00–14:00 local time), the strongest period of convection on the day.
 
@@ -122,11 +122,11 @@ Analyze the output
 
 * Using the XY and XZ cross sections, discuss the characteristics of the resolved turbulence.
 * What is the boundary layer height in the convective case?
-* Is the boundary layer stable, neutral, or unstable? Why?
+* Using the vertical profile plots, explain why the boundary layer is convective.
 * Other...
 
-CASE 3: STABLE BOUNDARY LAYER
-=============================
+CASE 3: DRY STABLE BOUNDARY LAYER
+=================================
 
 Background
 ------------------
@@ -186,8 +186,16 @@ Analyze the output
 
 * Using the XY and XZ cross sections, discuss the characteristics of the resolved turbulence.
 * What is the boundary layer height in the stable case?
-* Is the boundary layer stable, neutral, or unstable? Why?
+* Using the vertical profile plots, explain why the boundary layer is stable.
 * Other...
+
+CASE 4: MOIST CONVECTIVE BOUNDARY LAYER
+=======================================
+
+Background
+------------------
+
+Here, we will run the FastEddy with explicit microphysics in a convectively unstable troposphere.
 
 OVERARCHING QUESTIONS
 =====================
