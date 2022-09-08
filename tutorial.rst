@@ -207,6 +207,7 @@ SENSITIVITY TESTS
 * Re-run the neutral case with :math:`z_0=0.3` m. Re-make all plots and discuss the differences between the control case.
 * Re-run the neutral case with the first order upwind advection scheme. Re-make all plots and discuss the differences between the control case. Why is the first order scheme a bad choice?
 * Re-run the stable case with a surface cooling rate of :math:`-0.5` K/h. Re-make all plots and discuss the differences between the control case.
+* Re-run the stable case using 4 GPUs instead of the control simulation's 8 GPUs. How much slower does the case run?
 
 
 EXTRA 
