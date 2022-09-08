@@ -59,7 +59,10 @@ Other plots TBD...
 Analyze the output
 ------------------
 
-Here we will ask some questions about interpreting the output of FastEddy
+* Using the XY and XZ cross sections, discuss the characteristics of the resolved turbulence.
+* What is the boundary layer height in the neutral case?
+* Is the boundary layer stable, neutral, or unstable? Why?
+* Other...
 
 CASE 2: CONVECTIVE BOUNDARY LAYER
 ==================================
@@ -117,7 +120,10 @@ Mean profiles at t=5.26 h (FE_TEST.948000).
 Analyze the output
 ------------------
 
-Here we will ask some questions about interpreting the output of FastEddy
+* Using the XY and XZ cross sections, discuss the characteristics of the resolved turbulence.
+* What is the boundary layer height in the convective case?
+* Is the boundary layer stable, neutral, or unstable? Why?
+* Other...
 
 CASE 3: STABLE BOUNDARY LAYER
 =============================
@@ -178,9 +184,20 @@ Mean profiles at t=2 h (FE_TEST.1440000).
 Analyze the output
 ------------------
 
-Here we will ask some questions about interpreting the output of FastEddy
+* Using the XY and XZ cross sections, discuss the characteristics of the resolved turbulence.
+* What is the boundary layer height in the stable case?
+* Is the boundary layer stable, neutral, or unstable? Why?
+* Other...
 
-CASE 4: SENSITIVITY TEST
+OVERALL QUESTIONS
+=================
+
+* What are main differences in the scale and magnitude of the resolved turbulence among the three cases?
+* How do the boundary layer heights differ among the cases? Why?
+* How does the TKE vary among the three cases? Which case has the highest TKE and why?
+* Other...
+
+SENSITIVITY TEST
 ========================
 
 Here, the user will make some modifications to the default parameters such as changing the grid spacing, stretching, model time step, advection scheme, number of grid points, domain decomposition and number of GPUs, etc, etc. Here, the user will execute the sensitivity test, and visualize and analyze the output
