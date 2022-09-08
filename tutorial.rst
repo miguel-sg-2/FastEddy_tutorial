@@ -11,13 +11,13 @@ Input parameters
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[800,800,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[5,5,5]`
-* Domain size: :math:`4 km \times 4 km \times 1.2 km`
+* Domain size: :math:`4 \times 4 \times 1.2` km
 * Advection scheme: 3rd order QUICK
 * Time scheme: 3rd order Runge Kutta
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
 * Latitude: :math:`54.0` N
 * Potential temperature gradients: The potential temperature is constant at 300 K from the surface to :math:`z= 500` m. Between :math:`500-650` m, the vertical gradient is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient is :math:`0.003` K/m.
-* Surface heat flux:  :math:`0.0 W/m^2`
+* Surface heat flux:  :math:`0.0` Km/s
 * Surface roughness length: :math:`z_0=0.1` m
 * Rayleigh damping layer: uppermost :math:`400` m of the domain
 * Cell perturbations: :math:`\pm 0.25` K 
@@ -65,13 +65,13 @@ Input parameters
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[600,600,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[10,10,10]`
-* Domain size: :math:`6 km \times 6 km \times 2.9 km` 
+* Domain size: :math:`6 \times 6 \times 2.9` km
 * Geostrophic wind: :math:`[U_g,V_g]=[8,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
 * Latitude: :math:`33.5` N
 * Potential temperature gradients: The potential temperature is constant at 309 K from the surface to :math:`z= 500` m. Above that the vertical gradient is :math:`0.004` K/m. 
-* Surface heat flux:  :math:`0.35 Km/s`
+* Surface heat flux:  :math:`0.35` Km/s
 * Surface roughness length: :math:`z_0=0.05` m
 * Rayleigh damping layer: uppermost :math:`600` m of the domain
 * Cell perturbations: :math:`\pm 0.25` K 
@@ -117,7 +117,7 @@ Input parameters
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[128,128,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[3.125,3.125,3.125]`
-* Domain size: :math:`0.4 km \times 0.4 km \times 0.4 km`
+* Domain size: :math:`0.4 \times 0.4 \times 0.4` km
 * Geostrophic wind: :math:`[U_g,V_g]=[9,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
