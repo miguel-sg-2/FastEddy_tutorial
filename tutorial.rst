@@ -15,7 +15,7 @@ Input parameters
 * Advection scheme: 3rd order QUICK
 * Time scheme: 3rd order Runge Kutta
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
-* Latitude: :math:`54.0` N
+* Latitude: :math:`54.0^{\circ}`N
 * Potential temperature gradients: The potential temperature is constant at 300 K from the surface to :math:`z= 500` m. Between :math:`500-650` m, the vertical gradient is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient is :math:`0.003` K/m.
 * Surface heat flux:  :math:`0.0` Km/s
 * Surface roughness length: :math:`z_0=0.1` m
@@ -69,7 +69,7 @@ Input parameters
 * Geostrophic wind: :math:`[U_g,V_g]=[8,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
-* Latitude: :math:`33.5` N
+* Latitude: :math:`33.5^{\circ}`N
 * Potential temperature gradients: The potential temperature is constant at 309 K from the surface to :math:`z= 500` m. Above that the vertical gradient is :math:`0.004` K/m. 
 * Surface heat flux:  :math:`0.35` Km/s
 * Surface roughness length: :math:`z_0=0.05` m
@@ -121,7 +121,7 @@ Input parameters
 * Geostrophic wind: :math:`[U_g,V_g]=[9,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
-* Latitude: :math:`72.5^{\circ}` N
+* Latitude: :math:`72.5^{\circ}`N
 * Potential temperature gradients: The potential temperature is constant at 265 K from the surface to :math:`z= 100` m. Above that the vertical gradient is :math:`0.01` K/m. 
 * Surface heat flux:  :math:`-0.25` K/h
 * Surface roughness length: :math:`z_0=0.05` m
