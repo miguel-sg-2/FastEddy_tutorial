@@ -48,6 +48,12 @@ XZ-plane views of instantaneous velocity components at t=1.8 h (FE_TEST.648000).
   :width: 600
   :alt: Alternative text
   
+Mean profiles at t=1.8 h (FE_TEST.648000).
+
+.. image:: notebooks/MEAN-PROF-neutral.png
+  :width: 600
+  :alt: Alternative text
+  
 Other plots TBD...
 
 Analyze the output
@@ -99,6 +105,12 @@ XY-plane views of instantaneous velocity components at t=5.26 h (FE_TEST.948000)
 XZ-plane views of instantaneous velocity components at t=5.26 h (FE_TEST.948000).
 
 .. image:: notebooks/UVW-XZ-convective.png
+  :width: 600
+  :alt: Alternative text
+  
+Mean profiles at t=5.26 h (FE_TEST.948000).
+
+.. image:: notebooks/MEAN-PROF-convective.png
   :width: 600
   :alt: Alternative text
 
@@ -155,6 +167,12 @@ XZ-plane views of instantaneous velocity components at t=2 h (FE_TEST.1440000).
 
 .. image:: notebooks/UVW-XZ-stable.png
   :width: 1200
+  :alt: Alternative text
+  
+Mean profiles at t=2 h (FE_TEST.1440000).
+
+.. image:: notebooks/MEAN-PROF-stable.png
+  :width: 600
   :alt: Alternative text
 
 Analyze the output
