@@ -121,7 +121,7 @@ Input parameters
 * Geostrophic wind: :math:`[U_g,V_g]=[9,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
-* Latitude: :math:`72.5` N
+* Latitude: :math:`72.5^\circ`N
 * Potential temperature gradients: The potential temperature is constant at 265 K from the surface to :math:`z= 100` m. Above that the vertical gradient is :math:`0.01` K/m. 
 * Surface heat flux:  :math:`-0.25` K/h
 * Surface roughness length: :math:`z_0=0.05` m
