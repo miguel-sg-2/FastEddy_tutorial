@@ -122,7 +122,7 @@ Analyze the output
 
 * Using the XY and XZ cross sections, discuss the characteristics of the resolved turbulence.
 * What is the boundary layer height in the convective case?
-* Using the vertical profile plots, explain why the boundary layer is convective.
+* Using the vertical profile plots, explain why the boundary layer is unstable.
 * Other...
 
 CASE 3: DRY STABLE BOUNDARY LAYER
