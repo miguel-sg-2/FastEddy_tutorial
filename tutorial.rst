@@ -80,6 +80,9 @@ Input parameters
 * Time period: 6 hours
 * Model time step: 0.02 s
 
+Execute FastEddy
+----------------
+
 Here we will describe how to download the FastEddy package and run the model. The package will include the executables, a script to install the executables in a directory structure, and other files such as the Jupyter notebooks.
 
 Visualize the output
@@ -131,6 +134,9 @@ Input parameters
 * Lateral boundary conditions: periodic
 * Time period: 2 hours
 * Model time step: 0.005 s
+
+Execute FastEddy
+----------------
 
 Here we will describe how to download the FastEddy package and run the model. The package will include the executables, a script to install the executables in a directory structure, and other files such as the Jupyter notebooks.
 
