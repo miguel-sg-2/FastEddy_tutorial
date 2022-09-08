@@ -189,8 +189,8 @@ Analyze the output
 * Is the boundary layer stable, neutral, or unstable? Why?
 * Other...
 
-OVERALL QUESTIONS
-=================
+OVERARCHING QUESTIONS
+=====================
 
 * What are main differences in the scale and magnitude of the resolved turbulence among the three cases?
 * How do the boundary layer heights differ among the cases? Why?
