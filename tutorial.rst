@@ -189,13 +189,13 @@ Analyze the output
 * Using the vertical profile plots, explain why the boundary layer is stable.
 * Other...
 
-CASE 4: MOIST CONVECTIVE BOUNDARY LAYER
-=======================================
+CASE 4: MOIST CONVECTIVE CASE
+==============================
 
 Background
 ------------------
 
-Here, we will run the FastEddy with explicit microphysics in a convectively unstable troposphere.
+Here, we will run the FastEddy with explicit microphysics in a convectively unstable troposphere. Parameters TBD.
 
 OVERARCHING QUESTIONS
 =====================
