@@ -12,6 +12,7 @@ Input parameters
 * Number of grid points: :math:`[N_x,N_y,N_z]=[800,800,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[5,5,5]`
 * Domain size: :math:`[4 \times 4 \times 1.2]` km
+* Model time step: 0.01 s
 * Advection scheme: 3rd order QUICK
 * Time scheme: 3rd order Runge Kutta
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
@@ -23,8 +24,7 @@ Input parameters
 * Cell perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-* Time period: 2 hours
-* Model time step: 0.01 s
+* Time period: 2 h
 
 Execute FastEddy
 ----------------
@@ -75,6 +75,7 @@ Input parameters
 * Number of grid points: :math:`[N_x,N_y,N_z]=[600,600,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[10,10,10]`
 * Domain size: :math:`[6 \times 6 \times 2.9]` km
+* Model time step: 0.02 s
 * Geostrophic wind: :math:`[U_g,V_g]=[8,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
@@ -86,8 +87,7 @@ Input parameters
 * Cell perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-* Time period: 6 hours
-* Model time step: 0.02 s
+* Time period: 6 h
 
 Execute FastEddy
 ----------------
@@ -139,6 +139,7 @@ Input parameters
 * Number of grid points: :math:`[N_x,N_y,N_z]=[128,128,122]`
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[3.125,3.125,3.125]`
 * Domain size: :math:`[0.4 \times 0.4 \times 0.4]` km
+* Model time step: 0.005 s
 * Geostrophic wind: :math:`[U_g,V_g]=[9,0]` m/s
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
@@ -150,8 +151,7 @@ Input parameters
 * Cell perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-* Time period: 2 hours
-* Model time step: 0.005 s
+* Time period: 2 h
 
 Execute FastEddy
 ----------------
