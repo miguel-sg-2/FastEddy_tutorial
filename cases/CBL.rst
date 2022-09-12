@@ -52,13 +52,13 @@ XZ-plane views of instantaneous velocity components at t=6 h (FE_TEST.1080000).
   :width: 600
   :alt: Alternative text
   
-Mean profiles at t=6 h (FE_TEST.1080000).
+Mean state variable profiles at t=6 h (FE_TEST.1080000).
 
 .. image:: ../images/MEAN-PROF-convective.png
   :width: 600
   :alt: Alternative text
   
-  Mean profiles at t=6 h (FE_TEST.1080000).
+Mean turbulence profiles at t=6 h (FE_TEST.1080000).
 
 .. image:: ../images/TURB-PROF-convective.png
   :width: 600
