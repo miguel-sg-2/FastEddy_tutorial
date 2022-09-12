@@ -11,5 +11,5 @@ FastEddy
   :caption: TUTORIAL
   
   NBL.rst
-  
-  tutorial.rst
+  cases/CBL.rst
+
