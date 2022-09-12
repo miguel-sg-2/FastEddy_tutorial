@@ -31,8 +31,10 @@ FastEddy
   
 .. toctree::
   :caption: INTRODUCTION 
-  :maxdepth: 1
-  :hidden:
+ 
+  temp1
+  temp2
+  temp3
   
   introduction.rst
   
