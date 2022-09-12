@@ -10,4 +10,6 @@ FastEddy
 .. toctree::
   :caption: TUTORIAL
   
+  NBL.rst
+  
   tutorial.rst
