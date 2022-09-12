@@ -14,6 +14,15 @@ Input parameters
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
 * Latitude: :math:`33.5^{\circ}` N
+* Surface potential temperature: :math:`309` K
+* Potential temperature profile:
+.. math::
+
+  \partial{\theta}/\partial z =
+    \begin{cases}
+      0 & \text{if $z$ \le 500 m}\\
+      0.004 & \text{$z$ > 500 m}
+    \end{cases}
 * Potential temperature gradients: The potential temperature is constant at 309 K from the surface to :math:`z= 500` m. Above that the vertical gradient is :math:`0.004` K/m. 
 * Surface heat flux:  :math:`0.35` Km/s
 * Surface roughness length: :math:`z_0=0.05` m
