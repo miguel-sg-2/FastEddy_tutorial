@@ -46,19 +46,19 @@ Open the Jupyter notebook entitled "FE-TUTORIAL-analyses.ipynb" and execute it. 
 
 XY-plane views of instantaneous velocity components at t=1.8 h (FE_TEST.648000).
 
-.. image:: notebooks/UVW-XY-neutral.png
+.. image:: ../notebooks/UVW-XY-neutral.png
   :width: 1200
   :alt: Alternative text
   
 XZ-plane views of instantaneous velocity components at t=1.8 h (FE_TEST.648000).
 
-.. image:: notebooks/UVW-XZ-neutral.png
+.. image:: ../notebooks/UVW-XZ-neutral.png
   :width: 600
   :alt: Alternative text
   
 Mean profiles at t=1.8 h (FE_TEST.648000).
 
-.. image:: notebooks/MEAN-PROF-neutral.png
+.. image:: ../notebooks/MEAN-PROF-neutral.png
   :width: 600
   :alt: Alternative text
   
