@@ -25,23 +25,12 @@ FastEddy
     This is a comment
   
 .. toctree::
-  :hidden:
-
-   coc
-  
-.. toctree::
   :caption: INTRODUCTION 
- 
-  temp1
-  temp2
-  temp3
   
   introduction.rst
   
 .. toctree::
   :caption: CASES 
-  :maxdepth: 1
-  :hidden:
   
   cases/NBL.rst
   cases/CBL.rst
@@ -50,12 +39,9 @@ FastEddy
  
 .. toctree::
   :caption: SENSITIVITY TEST
-  :maxdepth: 1
-  :hidden:
   
    sensitivity/SNS.rst
    
 .. toctree::
   :caption: QUESTIONS
-  :maxdepth: 1
-  :hidden:
+ 
