@@ -20,7 +20,7 @@ Input parameters
   \partial{\theta}/\partial z =
     \begin{cases}
       0 & \text{if $z$ $\le$ 500 m}\\
-      0.004 & \text{$z$ > 500 m}
+      0.004 & \text{if $z$ > 500 m}
     \end{cases}
 * Surface heat flux:  :math:`0.35` Km/s
 * Surface roughness length: :math:`z_0=0.05` m
