@@ -17,7 +17,6 @@ Input parameters
 * Surface potential temperature: :math:`309` K
 * Potential temperature profile:
 .. math::
-
   \partial{\theta}/\partial z =
     \begin{cases}
       0 & \text{if $z$ $\le$ 500 m}\\
