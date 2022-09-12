@@ -24,7 +24,7 @@ Input parameters
     \begin{cases}
       0 & \text{if $z$ $\le$ 500 m}\\
       0.08 & \text{if 500 m < $z$ $\le$ 650 m}\\
-      0.003 & \text{$z$ > 650 m}
+      0.003 & \text{if $z$ > 650 m}
     \end{cases} 
 * Surface heat flux:  :math:`0.0` Km/s
 * Surface roughness length: :math:`z_0=0.1` m
