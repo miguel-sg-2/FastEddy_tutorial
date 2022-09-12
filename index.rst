@@ -1,3 +1,5 @@
+:orphan:
+
 FastEddy
 ========
 
@@ -6,6 +8,8 @@ FastEddy
 .. _FastEddy: https://ral.ucar.edu/solutions/products/fasteddy
 .. _NCAR: https://ncar.ucar.edu
 .. _RAL: https://ral.ucar.edu
+  
+
   
 .. toctree::
   :hidden:
@@ -16,18 +20,18 @@ FastEddy
   
 .. toctree::
   :caption: CASES 
-  :hidden:
   :maxdepth: 1
+  :hidden:
   
   cases/NBL.rst
   cases/CBL.rst
   cases/SBL.rst
   cases/MBL.rst
-  cases/SNS.rst
+ 
 
 .. toctree::
   :caption: QUESTIONS
-  :hidden:
   :maxdepth: 1
+  :hidden:
   
-  cases/tutorial.rst
+   cases/SNS.rst
