@@ -38,7 +38,7 @@ FastEddy
   cases/MBL.rst
  
 .. toctree::
-  :caption: SENSITIVITY TEST
+  :caption: SENSITIVITY
   
    sensitivity/SNS.rst
    
