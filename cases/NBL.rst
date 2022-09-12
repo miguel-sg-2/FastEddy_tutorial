@@ -17,14 +17,15 @@ Input parameters
 * Time scheme: 3rd order Runge Kutta
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
 * Latitude: :math:`54.0^{\circ}` N
-*
+* Surface potential temperature: :math:`300` K
+* Potential temperature profile:
 .. math::
 
-  D_{it} =
+  \partial{\theta}/\partial z =
     \begin{cases}
-      1 & \text{if bank $i$ issues ABs at time $t$}\\
-      2 & \text{if bank $i$ issues CBs at time $t$}\\
-      0 & \text{otherwise}
+      0 & \text{if $z$ <= 500 $m$}\\
+      0.08 & \text{if 500 $m$ < $z$ <= 650 $m$}\\
+      0.003 & \text{$z$ > 650 $m$}}
     \end{cases}
     
 * Potential temperature gradients: The potential temperature is constant at 300 K from the surface to :math:`z= 500` m. Between :math:`500-650` m, the vertical gradient is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient is :math:`0.003` K/m.
