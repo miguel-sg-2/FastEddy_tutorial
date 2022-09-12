@@ -51,4 +51,4 @@ FastEddy
   :maxdepth: 1
   :hidden:
   
-   cases/SNS.rst
+   sensitivity/SNS.rst
