@@ -8,12 +8,16 @@ FastEddy
 .. _RAL: https://ral.ucar.edu
   
 .. toctree::
-  :caption: TUTORIAL 
-  
+  :hidden:
+
+   coc
+
   This is a tutorial designed so that a user can understand how to execute the model, and visualize and analyze the output.
   
 .. toctree::
-  :caption: CASES   
+  :caption: CASES 
+  :hidden:
+  :maxdepth: 1
   
   cases/NBL.rst
   cases/CBL.rst
@@ -23,5 +27,7 @@ FastEddy
 
 .. toctree::
   :caption: QUESTIONS
+  :hidden:
+  :maxdepth: 1
   
   cases/tutorial.rst
