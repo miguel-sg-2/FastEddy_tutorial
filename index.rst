@@ -19,4 +19,9 @@ FastEddy
   cases/CBL.rst
   cases/SBL.rst
   cases/MBL.rst
+  cases/SNS.rst
 
+.. toctree::
+  :caption: QUESTIONS
+  
+  cases/tutorial.rst
