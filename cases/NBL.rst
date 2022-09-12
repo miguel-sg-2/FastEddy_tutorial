@@ -56,13 +56,13 @@ XZ-plane views of instantaneous velocity components at t=7 h (FE_TEST.504000).
   :width: 600
   :alt: Alternative text
   
-Mean profiles at t=7 h (FE_TEST.504000).
+Mean state variable profiles at t=7 h (FE_TEST.504000).
 
 .. image:: ../images/MEAN-PROF-neutral.png
   :width: 600
   :alt: Alternative text
  
-Turbulence profiles at t=7 h (FE_TEST.504000) (using previous 1-hour mean).
+Mean turbulence profiles at t=7 h (FE_TEST.504000) (using previous 1-hour mean).
 
 .. image:: ../images/TURB-PROF-neutral.png
   :width: 600
