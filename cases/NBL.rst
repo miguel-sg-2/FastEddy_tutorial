@@ -46,13 +46,13 @@ Open the Jupyter notebook entitled "FE-TUTORIAL-analyses.ipynb" and execute it. 
 
 XY-plane views of instantaneous velocity components at t=7 h (FE_TEST.504000).
 
-.. image:: ../images/UVW-XY-neutral.png
+.. image:: ../images/UVWTHETA-XY-neutral.png
   :width: 1200
   :alt: Alternative text
   
 XZ-plane views of instantaneous velocity components at t=7 h (FE_TEST.504000).
 
-.. image:: ../images/UVW-XZ-neutral.png
+.. image:: ../images/UVWTHETA-XZ-neutral.png
   :width: 600
   :alt: Alternative text
   
