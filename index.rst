@@ -19,6 +19,10 @@ FastEddy
    div#cases.section,
    div#questions.section,
    </style>
+   
+.. only:: comment
+
+    This is a comment
   
 .. toctree::
   :hidden:
@@ -30,7 +34,7 @@ FastEddy
   :maxdepth: 1
   :hidden:
   
-  tutorial.rst
+  introduction.rst
   
 .. toctree::
   :caption: CASES 
@@ -42,7 +46,6 @@ FastEddy
   cases/SBL.rst
   cases/MBL.rst
  
-
 .. toctree::
   :caption: QUESTIONS
   :maxdepth: 1
