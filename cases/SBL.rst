@@ -17,7 +17,16 @@ Input parameters
 * Advection scheme: Hybrid 5th-6th order, blending coefficient of 0.8
 * Time scheme: 3rd order Runge Kutta
 * Latitude: :math:`72.5^{\circ}` N
-* Potential temperature gradients: The potential temperature is constant at 265 K from the surface to :math:`z= 100` m. Above that the vertical gradient is :math:`0.01` K/m. 
+* Surface potential temperature: :math:`265` K
+* Potential temperature profile:
+.. math::
+
+  \partial{\theta}/\partial z =
+    \begin{cases}
+      0 & \text{if $z$ \le 100 m}\\
+      0.01 & \text{$z$ > 100 m}
+    \end{cases}
+    
 * Surface heat flux:  :math:`-0.25` K/h
 * Surface roughness length: :math:`z_0=0.05` m
 * Rayleigh damping layer: uppermost :math:`100` m of the domain
