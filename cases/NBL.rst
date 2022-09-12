@@ -25,7 +25,7 @@ Input parameters
     \begin{cases}
       0 & \text{if $z$ <= 500 $m$}\\
       0.08 & \text{if 500 $m$ < $z$ <= 650 $m$}\\
-      0.003 & \text{$z$ > 650 $m$}}
+      0.003 & \text{$z$ > 650 $m$}
     \end{cases}
     
 * Potential temperature gradients: The potential temperature is constant at 300 K from the surface to :math:`z= 500` m. Between :math:`500-650` m, the vertical gradient is :math:`0.08` K/m. Above :math:`650` m, the vertical gradient is :math:`0.003` K/m.
