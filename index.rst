@@ -8,8 +8,13 @@ FastEddy
 .. _RAL: https://ral.ucar.edu
   
 .. toctree::
-  :caption: TUTORIAL
+  :caption: TUTORIAL 
   
-  NBL.rst
+.. toctree::
+  :caption: CASES   
+  
+  cases/NBL.rst
   cases/CBL.rst
+  cases/SBL.rst
+  cases/MBL.rst
 
