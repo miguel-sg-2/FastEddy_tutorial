@@ -42,25 +42,25 @@ Open the Jupyter notebook entitled "FE-TUTORIAL-analyses.ipynb" and execute it. 
 
 XY-plane views of instantaneous velocity components at t=6 h (FE_TEST.1080000).
 
-.. image:: images/UVW-XY-convective.png
+.. image:: ../images/UVW-XY-convective.png
   :width: 1200
   :alt: Alternative text
   
 XZ-plane views of instantaneous velocity components at t=6 h (FE_TEST.1080000).
 
-.. image:: images/UVW-XZ-convective.png
+.. image:: ../images/UVW-XZ-convective.png
   :width: 600
   :alt: Alternative text
   
 Mean profiles at t=6 h (FE_TEST.1080000).
 
-.. image:: images/MEAN-PROF-convective.png
+.. image:: ../images/MEAN-PROF-convective.png
   :width: 600
   :alt: Alternative text
   
   Mean profiles at t=6 h (FE_TEST.1080000).
 
-.. image:: images/TURB-PROF-convective.png
+.. image:: ../images/TURB-PROF-convective.png
   :width: 600
   :alt: Alternative text
 
