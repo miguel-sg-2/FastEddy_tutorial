@@ -47,8 +47,13 @@ FastEddy
   cases/MBL.rst
  
 .. toctree::
-  :caption: QUESTIONS
+  :caption: SENSITIVITY TEST
   :maxdepth: 1
   :hidden:
   
    sensitivity/SNS.rst
+   
+.. toctree::
+  :caption: QUESTIONS
+  :maxdepth: 1
+  :hidden:
