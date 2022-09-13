@@ -1,5 +1,5 @@
-CASE 3: DRY STABLE BOUNDARY LAYER
-=================================
+Dry stable boundary layer
+==========================
 
 Background
 ------------------
