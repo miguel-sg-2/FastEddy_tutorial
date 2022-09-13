@@ -1,5 +1,5 @@
-4. Moist convective case
-========================
+Moist convective case
+=====================
 
 Background
 -----------
