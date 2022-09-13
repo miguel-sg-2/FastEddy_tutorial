@@ -10,7 +10,7 @@ Input parameters
 ----------------
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[640,634,58]`
-* Isotropic grid spacings: :math:`[dx,dy,dz]=[20,20,05]`
+* Isotropic grid spacings: :math:`[dx,dy,dz]=[20,20,20]` m
 * Domain size: :math:`[6.4 \times 6.34 \times 1.148]` km
 * Model time step: 0.05 s
 * Advection scheme: 3rd order QUICK
