@@ -16,7 +16,7 @@
     This is a comment
   
 .. toctree::
-  :caption: INTRODUCTION 
+  :caption: GETTING STARTED
   
   introduction.rst
   
