@@ -1,5 +1,5 @@
-1. Dry neutral boundary layer
-=============================
+Dry neutral boundary layer
+===========================
 
 Background
 ----------
