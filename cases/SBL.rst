@@ -61,7 +61,7 @@ Mean profiles of state variables at t=6 h (FE_TEST.4320000):
   :width: 600
   :alt: Alternative text
   
-Mean turbulence profiles at t=6 h (FE_TEST.4320000):
+Mean turbulence profiles at t=6 h (FE_TEST.4320000) (using previous 1-hour mean):
 
 .. image:: ../images/MEAN-PROF-stable.png
   :width: 600
