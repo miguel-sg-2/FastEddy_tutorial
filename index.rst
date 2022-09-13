@@ -4,10 +4,11 @@
   introduction.rst
   
 .. toctree::
-  :caption: SENSITIVITY
+  :caption: QUESTIONS
   
-  sensitivity/SNS.rst
+  questions.rst
    
 .. toctree::
-  :caption: QUESTIONS
+  :caption: SENSITIVITY TESTS
  
+  sensitivity.rst
