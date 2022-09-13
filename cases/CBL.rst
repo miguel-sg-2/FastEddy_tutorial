@@ -7,7 +7,7 @@ Input parameters
 ----------------
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[600,600,122]`
-* Isotropic grid spacings: :math:`[dx,dy,dz]=[10,10,10]`
+* Isotropic grid spacings: :math:`[dx,dy,dz]=[10,10,10]` m
 * Domain size: :math:`[6 \times 6 \times 2.9]` km
 * Model time step: 0.02 s
 * Geostrophic wind: :math:`[U_g,V_g]=[8,0]` m/s
