@@ -15,6 +15,7 @@
 
 .. toctree::
   :caption: CASES 
+  :numbered:
   
   cases/NBL.rst
   cases/CBL.rst
