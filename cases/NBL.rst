@@ -1,5 +1,5 @@
-CASE 1: DRY NEUTRAL BOUNDARY LAYER
-==================================
+Dry neutral boundary layer
+===========================
 
 Background
 ----------
