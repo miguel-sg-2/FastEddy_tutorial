@@ -14,7 +14,7 @@
   HELLO2
 
 .. toctree::
-  :caption: CASES 
+  :caption: IDEAL TEST CASES 
   :numbered:
   
   cases/NBL.rst
