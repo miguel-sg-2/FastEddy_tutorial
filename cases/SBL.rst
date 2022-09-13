@@ -1,5 +1,5 @@
-3. Dry stable boundary layer
-============================
+Dry stable boundary layer
+==========================
 
 Background
 ------------------
