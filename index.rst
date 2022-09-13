@@ -4,25 +4,6 @@
   introduction.rst
   
 .. toctree::
-  :caption: ONE
-  
-  HELLO1
-  
-.. toctree::
-  :caption: TWO
-  
-  HELLO2
-
-.. toctree::
-  :caption: IDEAL TEST CASES 
-  :numbered:
-  
-  cases/NBL.rst
-  cases/CBL.rst
-  cases/SBL.rst
-  cases/MBL.rst
-  
-.. toctree::
   :caption: SENSITIVITY
   
    sensitivity/SNS.rst
