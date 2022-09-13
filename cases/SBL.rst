@@ -45,17 +45,17 @@ Open the Jupyter notebook entitled "FE-TUTORIAL-analyses.ipynb" and execute it. 
 
 XY-plane views of instantaneous velocity components at t=6 h (FE_TEST.4320000):
 
-.. image:: ../images/UVW-XY-stable.png
+.. image:: ../images/UVWTHETA-XY-stable.png
   :width: 1200
   :alt: Alternative text
   
 XZ-plane views of instantaneous velocity components at t=6 h (FE_TEST.4320000):
 
-.. image:: ../images/UVW-XZ-stable.png
+.. image:: ../images/UVWTHETA-XZ-stable.png
   :width: 1200
   :alt: Alternative text
   
-Mean profiles of state variables at t=6 h (FE_TEST.4320000):
+Mean profiles of state variables at t=6 h (FE_TEST.4320000) (domain horizontal average):
 
 .. image:: ../images/MEAN-PROF-stable.png
   :width: 600
@@ -63,7 +63,7 @@ Mean profiles of state variables at t=6 h (FE_TEST.4320000):
   
 Mean turbulence profiles at t=6 h (FE_TEST.4320000) (using previous 1-hour mean):
 
-.. image:: ../images/MEAN-PROF-stable.png
+.. image:: ../images/TURB-PROF-stable.png
   :width: 600
   :alt: Alternative text
 
