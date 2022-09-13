@@ -4,6 +4,15 @@
   introduction.rst
   
 .. toctree::
+  :caption: IDEAL TEST CASES 
+  :numbered:
+  
+  cases/NBL.rst
+  cases/CBL.rst
+  cases/SBL.rst
+  cases/MBL.rst
+
+.. toctree::
   :caption: QUESTIONS
   
   questions.rst
