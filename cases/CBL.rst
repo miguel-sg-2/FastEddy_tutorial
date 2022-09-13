@@ -58,7 +58,7 @@ Mean state variable profiles at t=6 h (FE_TEST.1080000):
   :width: 600
   :alt: Alternative text
   
-Mean turbulence profiles at t=6 h (FE_TEST.1080000):
+Mean turbulence profiles at t=6 h (FE_TEST.1080000) (using previous 1-hour mean):
 
 .. image:: ../images/TURB-PROF-convective.png
   :width: 600
