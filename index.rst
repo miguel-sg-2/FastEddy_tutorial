@@ -6,7 +6,7 @@
 .. toctree::
   :caption: SENSITIVITY
   
-   sensitivity/SNS.rst
+  sensitivity/SNS.rst
    
 .. toctree::
   :caption: QUESTIONS
