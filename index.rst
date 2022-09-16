@@ -12,9 +12,6 @@
   cases/SBL.rst
 
 ..
-
-  cases/MBL.rst
-    
     
   .. toctree::
     :caption: QUESTIONS
