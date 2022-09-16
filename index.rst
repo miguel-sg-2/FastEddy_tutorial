@@ -11,7 +11,7 @@
   cases/CBL.rst
   cases/SBL.rst
 
-..
+.. only
     
   .. toctree::
     :caption: QUESTIONS
