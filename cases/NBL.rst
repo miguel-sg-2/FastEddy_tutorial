@@ -30,6 +30,7 @@ Input parameters
 * Surface roughness length: :math:`z_0=0.1` m
 * Rayleigh damping layer: uppermost :math:`400` m of the domain
 * Initial perturbations: :math:`\pm 0.25` K 
+* Depth of perturbations: :math:`350` m
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
 * Time period: 6 h
