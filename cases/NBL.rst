@@ -33,7 +33,7 @@ Input parameters
 * Depth of perturbations: :math:`350` m
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-* Time period: 6 h
+* Time period: 7 h
 
 Execute FastEddy
 ----------------
