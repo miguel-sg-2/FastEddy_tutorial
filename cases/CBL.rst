@@ -25,7 +25,7 @@ Input parameters
 * Surface heat flux:  :math:`0.35` Km/s
 * Surface roughness length: :math:`z_0=0.05` m
 * Rayleigh damping layer: uppermost :math:`600` m of the domain
-* Cell perturbations: :math:`\pm 0.25` K 
+* Initial perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
 * Time period: 6 h
@@ -38,7 +38,7 @@ Here we will describe how to download the FastEddy package and run the model. Th
 Visualize the output
 --------------------
 
-Open the Jupyter notebook entitled "MAKE-FE-TUTORIAL-PLOTS.ipynb" and execute it. Please ensure you create the plots exactly as shown below.
+Open the Jupyter notebook entitled "MAKE-FE-TUTORIAL-PLOTS.ipynb" and execute it. 
 
 XY-plane views of instantaneous velocity components at t=6 h (FE_TEST.1080000):
 
