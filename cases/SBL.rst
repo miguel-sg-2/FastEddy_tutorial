@@ -28,10 +28,10 @@ Input parameters
 * Surface heat flux:  :math:`-0.25` K/h
 * Surface roughness length: :math:`z_0=0.05` m
 * Rayleigh damping layer: uppermost :math:`100` m of the domain
-* Cell perturbations: :math:`\pm 0.25` K 
+* Initial perturbations: :math:`\pm 0.25` K 
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-* Time period: 2 h
+* Time period: 6 h
 
 Execute FastEddy
 ----------------
