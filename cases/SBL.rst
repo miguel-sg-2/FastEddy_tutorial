@@ -61,7 +61,7 @@ Mean (domain horizontal average) vertical profiles of state variables at t=6 h (
   :width: 600
   :alt: Alternative text
   
-Mean (domain horizontal average) vertical profiles of turbulence quantities at t=6 h (FE_TEST.4320000). Perturbations are relative to the previous 1-hour mean:  
+Horizontally-averaged vertical profiles of turbulence quantities at t=6 h (FE_TEST.4320000) [perturbations are computed at each point relative to the previous 1-hour mean, and then horizontally averaged]:
 
 .. image:: ../images/TURB-PROF-stable.png
   :width: 600
