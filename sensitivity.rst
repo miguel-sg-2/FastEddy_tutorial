@@ -1,7 +1,7 @@
 Instructions
 ============
 
-* Re-run the neutral case with :math:`[N_x,N_y,N_z]=[400,400,122]` and isotropic grid spacings of: :math:`[dx,dy,dz]=[10,10,10]`. Adjust the model time step accordingly. Re-make all plots and discuss the differences between the control case. How much longer did it take to complete the simulation? 
+* Re-run the neutral case with :math:`[N_x,N_y,N_z]=[400,400,122]` and isotropic grid spacings of :math:`[dx,dy,dz]=[10,10,10]`. Adjust the model time step accordingly. Re-make all plots and discuss the differences between the control case. How much longer did it take to complete the simulation? 
 * Re-run the convective case with a surface heat flux of :math:`=+0.70` Km/s. Re-make all plots and discuss the differences between the control case. 
 * Re-run the neutral case with :math:`z_0=0.3` m. Re-make all plots and discuss the differences between the control case. 
 * Re-run the neutral case with the first order upwind advection scheme. Re-make all plots and discuss the differences between the control case. Why is the first order scheme a bad choice? 
