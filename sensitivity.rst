@@ -8,10 +8,13 @@ Instructions
 * Re-run the stable case with a surface cooling rate of :math:`-0.5` K/h. Re-make all plots and discuss the differences between the control case. 
 * Re-run the stable case using half of the GPUs used in the control simulation. How much slower does the case run? 
 
-EXTRA
+..
 
-(Here, the user will make some modifications to the default parameters such as changing the grid spacing, stretching, model time step, advection scheme, number of grid points, domain decomposition and number of GPUs, etc, etc. Here, the user will execute the sensitivity test, and visualize and analyze the output)
+    (Here, the user will make some modifications to the default parameters such as changing the grid spacing, stretching, model time step, advection     
 
-x^2+y^2=z^2
+    scheme,    number of grid points, domain decomposition and number of GPUs, etc, etc. Here, the user will execute the sensitivity test, and visualize 
+    and analyze the     output)
 
-frac{ sum_{t=0}^{N}f(t,k) }{N}
+     x^2+y^2=z^2
+
+      frac{ sum_{t=0}^{N}f(t,k) }{N}
