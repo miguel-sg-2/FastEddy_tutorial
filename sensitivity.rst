@@ -8,7 +8,7 @@ Instructions
 * Re-run the stable case with a surface cooling rate of :math:`-0.5` K/h. Re-make all plots and discuss the differences between the control case. 
 * Re-run the stable case using half of the GPUs used in the control simulation. How much slower does the case run? 
 
-..
+.. only
 
     (Here, the user will make some modifications to the default parameters such as changing the grid spacing, stretching, model time step, advection     
 
