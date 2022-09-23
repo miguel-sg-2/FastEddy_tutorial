@@ -10,6 +10,11 @@
   cases/NBL.rst
   cases/CBL.rst
   cases/SBL.rst
+  
+.. toctree::   
+  :caption: SENSITIVITY TESTS
+ 
+  sensitivity.rst
 
 .. only
     
