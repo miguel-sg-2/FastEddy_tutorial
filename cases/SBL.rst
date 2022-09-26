@@ -43,25 +43,25 @@ Visualize the output
 
 Open the Jupyter notebook entitled "MAKE-FE-TUTORIAL-PLOTS.ipynb" and execute it. 
 
-XY-plane views of instantaneous velocity components at t=6 h (FE_TEST.4320000):
+XY-plane views of instantaneous velocity components at t=12 h (FE_TEST.8640000):
 
 .. image:: ../images/UVWTHETA-XY-stable.png
   :width: 1200
   :alt: Alternative text
   
-XZ-plane views of instantaneous velocity components at t=6 h (FE_TEST.4320000):
+XZ-plane views of instantaneous velocity components at t=12 h (FE_TEST.8640000):
 
 .. image:: ../images/UVWTHETA-XZ-stable.png
   :width: 1200
   :alt: Alternative text
   
-Mean (domain horizontal average) vertical profiles of state variables at t=6 h (FE_TEST.4320000):
+Mean (domain horizontal average) vertical profiles of state variables at t=12 h (FE_TEST.8640000):
 
 .. image:: ../images/MEAN-PROF-stable.png
   :width: 600
   :alt: Alternative text
   
-Horizontally-averaged vertical profiles of turbulence quantities at t=6 h (FE_TEST.4320000) [perturbations are computed at each point relative to the previous 1-hour mean, and then horizontally averaged]:
+Horizontally-averaged vertical profiles of turbulence quantities at t=12 h (FE_TEST.8640000) [perturbations are computed at each point relative to the previous 1-hour mean, and then horizontally averaged]:
 
 .. image:: ../images/TURB-PROF-stable.png
   :width: 600
