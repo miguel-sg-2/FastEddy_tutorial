@@ -10,11 +10,27 @@ from scipy.stats import kurtosis
 import matplotlib.colors as mcolors
 import scipy.fftpack as fftpack
 from scipy import interpolate
-import pkg_resources
-import types
+
+# DEF1
+def check_imports():
+   import pkg_resources
+   
+   imports = list(set(get_imports()))
+
+   # The only way I found to get the version of the root package
+   # from only the name of the package is to cross-check the names 
+   # of installed packages vs. imported packages
+   requirements = []
+   for m in pkg_resources.working_set:
+    if m.project_name in imports and m.project_name!="pip":
+        requirements.append((m.project_name, m.version))
+
+   for r in requirements:
+    print("{}=={}".format(*r))
 
 # DEF1
 def get_imports():
+    import types
     for name, val in globals().items():
         if isinstance(val, types.ModuleType):
             # Split ensures you get root package, 
@@ -37,18 +53,6 @@ def get_imports():
             name = poorly_named_packages[name]
 
         yield name
-imports = list(set(get_imports()))
-
-# The only way I found to get the version of the root package
-# from only the name of the package is to cross-check the names 
-# of installed packages vs. imported packages
-requirements = []
-for m in pkg_resources.working_set:
-    if m.project_name in imports and m.project_name!="pip":
-        requirements.append((m.project_name, m.version))
-
-for r in requirements:
-    print("{}=={}".format(*r))
 
 # DEF2
 def test_function(FE_xr):
@@ -244,8 +248,8 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
     elif case == 'stable':
         xticks_vals=[0,0.10,0.20,0.3,0.4]
         xticks_ticks=['0','0.1','0.2','0.3','0.4']
-        yticks_vals=[0,0.10,0.20,0.3,0.4]
-        yticks_ticks=['0','0.1','0.2','0.3','0.4']
+        yticks_vals=[0,0.243,0.486,0.729,0.972]
+        yticks_ticks=['0','0.243','0.486','0.729','0.972']
     else:
          print("ERROR: INVALID CASE SELECTED")
             
@@ -346,9 +350,15 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
         print(path_figure + fig_name)
         plt.savefig(path_figure + fig_name,dpi=300,bbox_inches = "tight")
         
-           
+          
+def plot_figureConfigure(numPlotsX,numPlotsY,sizeX,sizeY,styleFile='./feplot.mplstyle'):
+   plt.style.use(styleFile) #Must issue the style.use before creating a figure handle
+   fig,axs = plt.subplots(numPlotsX,numPlotsY,sharey=True,sharex=False,figsize=(sizeX,sizeY))
+  
+   return fig,axs
+
 # DEF6
-def plot_mean_profiles(case, case_open, save_plot_opt, path_figure):
+def plot_mean_profiles(fig, axs, FE_xr, caseLabel, mean_key, save_plot_opt, path_figure, caseCnt=0):
 
     colores_v = []
     colores_v.append('darkblue')
@@ -364,121 +374,61 @@ def plot_mean_profiles(case, case_open, save_plot_opt, path_figure):
   
     y_min = 0.0
     y_max = 700.0 # FE_mean_MO[FE_mean_MO.shape[0]-1,0]
-    
-    ufield = case_open.u.isel(time=0).values
-    vfield = case_open.v.isel(time=0).values
-    wfield = case_open.w.isel(time=0).values
-    thetafield = case_open.theta.isel(time=0).values
-    fricVelfield = case_open.fricVel.isel(time=0).values
-    #tkefield = case_0.TKE_0.isel(time=0).values
-    xPos = case_open.xPos.isel(time=0,yIndex=0).values
-    yPos = case_open.yPos.isel(time=0,yIndex=0).values
-    zPos = case_open.zPos.isel(time=0,yIndex=0).values
-
-    if case == 'neutral':
-        xticks_vals=[0,1.0,2.0,3.0,4.0]
-        xticks_ticks=['0','1.0','2.0','3.0','4.0']
-        yticks_vals=[0,0.287,0.574,0.861,1.148]
-        yticks_ticks=['0','0.287','0.574','0.861','1.148']
-    elif case == 'convective':
-        xticks_vals=[0,1.5,3.0,4.5,6.0]
-        xticks_ticks=['0','1.5','3.0','4.5','6.0']
-        yticks_vals=[0,0.729,1.458,2.187,2.916]
-        yticks_ticks=['0','0.729','1.458','2.187','2.916']
-    elif case == 'stable':
-        xticks_vals=[0,0.10,0.20,0.3,0.4]
-        xticks_ticks=['0','0.1','0.2','0.3','0.4']
-        yticks_vals=[0,0.10,0.20,0.3,0.4]
-        yticks_ticks=['0','0.1','0.2','0.3','0.4']
+ 
+    if caseCnt > 0:
+       lsIndex=1   #line style index
     else:
-         print("ERROR: INVALID CASE SELECTED")
-            
-    yaxis_ticks = yticks_vals
-    yaxis_vals = yticks_ticks
-    yaxis_vals_empty = ['','','','','']
-    
-    print(zPos.shape)
-    print(np.amax(zPos/1000.0))
-    
-    spdtemp = ufield * ufield + vfield * vfield + wfield * wfield
-    spdfield = np.power(spdtemp,0.5)
-    mean_U = np.mean(ufield,axis=(1,2))
-    mean_V = np.mean(vfield,axis=(1,2))
-    mean_THETA = np.mean(thetafield,axis=(1,2))
-    mean_SPD = np.mean(spdfield,axis=(1,2))
-    #mean_TKE = np.mean(tkefield,axis=(1,2))
-    if case == 'neutral':
-        mean_FRICVEL=np.mean(fricVelfield,axis=(0,1))
-        print(fricVelfield.shape)
-        print(mean_FRICVEL.shape)
-    
-    fntSize=20
-    fntSize_title=22
-    fntSize_legend=16
-    plt.rcParams['xtick.labelsize']=fntSize
-    plt.rcParams['ytick.labelsize']=fntSize
-    plt.rcParams['axes.linewidth']=2.0
-    numPlotsX=1
-    numPlotsY=4
-    fig,axs = plt.subplots(numPlotsX,numPlotsY,sharey=False,sharex=False,figsize=(28,12))
-    
-    fig_name = "MEAN-PROF-"+case+".png"
+       lsIndex=0  #line style index
+          
+    fig_name = "MEAN-PROF-"+caseLabel+".png"
     
     ###############
     ### panel 0 ###
     ###############
     ax = axs[0]
-    im = ax.plot(mean_SPD,zPos[:,0]/1000.0,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label=case)
-    if case == 'neutral':
-        im2 = ax.plot((mean_FRICVEL/0.4)*np.log(zPos[:,0]/np.amax(case_open.z0m.isel(time=0).values)),zPos[:,0]/1000.0,lineas_v[1],color=colores_v[1],linewidth=2.5,markersize=8,label='log law')
-    #ax.set_ylim([y_min,y_max])
-    ax.set_xlabel(r"$WS$ $[$m s$^{-1}]$",fontsize=fntSize)
-    ax.set_ylabel(r"$z$ $[$km$]$",fontsize=fntSize)
+    im = ax.plot(np.sqrt((FE_xr['u']**2+FE_xr['v']**2)).mean(dim=('yIndex','xIndex')),
+                 FE_xr['zPos'][:,0,0]/1000.0,
+                 lineas_v[lsIndex],color=colores_v[caseCnt],label=caseLabel)
+    if caseLabel == 'neutral':
+        im2 = ax.plot((FE_xr['fricVel'].mean(dim=('yIndex','xIndex'))/0.4)*np.log(FE_xr['zPos'][:,0,0]/np.amax(FE_xr['z0m'][0,0])),
+                       FE_xr['zPos'][:,0,0]/1000.0,
+                       lineas_v[1],color=colores_v[3],label='log law')
+    ax.set_xlabel(r"$WS$ $[$m s$^{-1}]$") #,fontsize=fntSize)
+    ax.set_ylabel(r"$z$ $[$km$]$") #,fontsize=fntSize)
     ax.grid(True)
-    ax.legend(loc=2,prop={'size': fntSize},edgecolor='white')
-    ax.set_yticks(yaxis_ticks)
-    ax.set_yticklabels(yaxis_vals,fontsize=fntSize)
+    ax.legend(loc=2,edgecolor='white')
     
     ###############
     ### panel 1 ###
     ###############
     ax = axs[1]
-    im = ax.plot(mean_U,zPos[:,0]/1000.0,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label=case)
-    #ax.set_ylim([y_min,y_max])
-    ax.set_xlabel(r"$U$ $[$m s$^{-1}]$",fontsize=fntSize)
-    #ax.set_ylabel(r"$z$ $[$km$]$",fontsize=fntSize)
+    im = ax.plot(FE_xr['u'].mean(dim=('yIndex','xIndex')),
+                 FE_xr['zPos'][:,0,0]/1000.0,
+                 lineas_v[lsIndex],color=colores_v[caseCnt],label=caseLabel)
+    ax.set_xlabel(r"$U$ $[$m s$^{-1}]$") #,fontsize=fntSize)
     ax.grid(True)
-    #ax.legend(loc=2,prop={'size': fntSize_legend},edgecolor='white')
-    ax.set_yticks(yaxis_ticks)
-    ax.set_yticklabels(yaxis_vals_empty,fontsize=fntSize)
     
     ###############
     ### panel 2 ###
     ###############
     ax = axs[2]
-    im = ax.plot(mean_V,zPos[:,0]/1000.0,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label=case)
-    #ax.set_ylim([y_min,y_max])
-    ax.set_xlabel(r"$V$ $[$m s$^{-1}]$",fontsize=fntSize)
-    #ax.set_ylabel(r"$z$ $[$m$]$",fontsize=fntSize)
+    im = ax.plot(FE_xr['v'].mean(dim=('yIndex','xIndex')),
+                 FE_xr['zPos'][:,0,0]/1000.0,
+                 lineas_v[lsIndex],color=colores_v[caseCnt],label=caseLabel)
+    ax.set_xlabel(r"$V$ $[$m s$^{-1}]$") #,fontsize=fntSize)
     ax.grid(True)
-    #ax.legend(loc=2,prop={'size': fntSize_legend},edgecolor='white')
-    ax.set_yticks(yaxis_ticks)
-    ax.set_yticklabels(yaxis_vals_empty,fontsize=fntSize)
     
     ###############
     ### panel 3 ###
     ###############
     ax = axs[3]
-    im = ax.plot(mean_THETA,zPos[:,0]/1000.0,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label=case)
-    #ax.set_ylim([y_min,y_max])
-    ax.set_xlabel("\u03B8 [K]",fontsize=fntSize)
-    #ax.set_ylabel(r"$z$ $[$km$]$",fontsize=fntSize)
+    im = ax.plot(FE_xr['theta'].mean(dim=('yIndex','xIndex')),
+                 FE_xr['zPos'][:,0,0]/1000.0,
+                 lineas_v[lsIndex],color=colores_v[caseCnt],label=caseLabel)
+    ax.set_xlabel(r"$\theta$ [K]") #,fontsize=fntSize)
     ax.grid(True)
-    #ax.legend(loc=2,prop={'size': fntSize_legend},edgecolor='white')
-    ax.set_yticks(yaxis_ticks)
-    ax.set_yticklabels(yaxis_vals_empty,fontsize=fntSize)
     
-    if (save_plot_opt==1):
+    if (save_plot_opt):
         print(path_figure + fig_name)
         plt.savefig(path_figure + fig_name,dpi=300,bbox_inches = "tight")
 
@@ -608,8 +558,8 @@ def plot_turb_profiles(case, case_open, FE_turb_tmp, save_plot_opt, path_figure)
     elif case == 'stable':
         xticks_vals=[0,0.10,0.20,0.3,0.4]
         xticks_ticks=['0','0.1','0.2','0.3','0.4']
-        yticks_vals=[0,0.10,0.20,0.3,0.4]
-        yticks_ticks=['0','0.1','0.2','0.3','0.4']
+        yticks_vals=[0,0.243,0.486,0.729,0.972]
+        yticks_ticks=['0','0.243','0.486','0.729','0.972']
     else:
          print("ERROR: INVALID CASE SELECTED")
             
