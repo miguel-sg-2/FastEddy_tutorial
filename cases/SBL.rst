@@ -41,7 +41,7 @@ Here we will describe how to download the FastEddy package and run the model. Th
 Visualize the output
 --------------------
 
-Open the Jupyter notebook entitled "MAKE-FE-TUTORIAL-PLOTS.ipynb" and execute it. 
+Open the Jupyter notebook entitled "MAKE_FE_TUTORIAL_PLOTS.ipynb" and execute it. 
 
 XY-plane views of instantaneous velocity components at t=12 h (FE_TEST.8640000):
 
