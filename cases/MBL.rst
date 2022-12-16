@@ -44,19 +44,19 @@ Open the Jupyter notebook entitled "FE_Postrocessing_Example04_BOMEX.ipynb" and 
 Time evolution of domain averaged total cloud cover (:math:`\alpha_c`) and liquid water path (LWP):
 
 .. image:: ../images/TimeEvolution_cldthres0.01.png
-     :width: 1200
+  :width: 1200
   :alt: Alternative text
 
 Vertical profiles of potential temperature (:math:`\theta`), water vapor (:math:`q_v`), horizontal velocity components (:math:`u`, :math:`v`), and liquid content (:math:`q_l`). Thin black dashed lines correspond to the initial conditions. Profiles are averaged for the last 3 hr (:math:`t = 180-360` min) and over horizontal domain slabs:
 
 .. image:: ../images/VerticalProfiles.png
-     :width: 900
+  :width: 900
   :alt: Alternative text
 
 Vertical profiles of turbulence kinetic energy (TKE), vertical velocity variance (), and vertical turbulent fluxes of zonal momentum (), water vapor (), liquid cloud, and virtual potential temperature (). Profiles are averaged for the last 3 hr (:math:`t = 180–360` min) and perturbations are computed as the departure from horizontal slab averages. These turbulence quantities are the sum of resolved and subgrid-scale components.
 
 .. image:: ../images/VerticalProfilesTurb.png
-        :width: 1200
+  :width: 1200
   :alt: Alternative text
 
 Analyze the output
