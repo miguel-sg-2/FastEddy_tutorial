@@ -1,5 +1,5 @@
-Non-precipitating shallow cumuls case
-=====================================
+Non-precipitating shallow cumulus
+=================================
 
 This tutorial case is the BOMEX LES intercomparison study from Siebesma et al. (2003), corresponding to a non-precipitating shallow cumulus cloud case informed by the Barbados Oceanographic and Meteorological Experiment (BOMEX, Holland & Rasmusson, 1973). The forcing consists of two different sources including prescribed kinematic surface fluxes of sensible and latent heat and large-scale forcing (LSF) tendencies due to mesoscale horizontal advection of water vapor mixing ratio, liquid potential temperature and horizontal momentum. The LSF includes subsidence to compensate the integrated effect of surface fluxes and advection tendencies, formulated as a prescribed time-invariant subsidence profile multiplied by the vertical gradient of horizontally averaged fields accros the domain. The main settings of this case are listed below and are further detailed in Munoz-Esparza et al. (2022).
 
@@ -10,13 +10,13 @@ Input parameters
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[100,100,40]` m
 * Domain size: :math:`[15.2 \times 14.6 \times 4.9]` km
 * Model time step: :math:`0.075` s
-* Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m s:math:`^{-1}`
+* Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m :math:`\mathrm{s}^{-1}`
 * Advection schemes: 5th-order upwind (dry dynamics), 3rd-order upwind (water vapor), and 3rd-order WENO (liquid water)
 * Time scheme: 3rd-order Runge Kutta
 * Latitude: :math:`14.94^{\circ}` N
 * Surface potential temperature: :math:`299.1` K
-* Surface sensible heat flux: :math:`8 \times 10^{-3}` K m s:math:`^{-1}`
-* Surface latent heat flux: :math:`5.2 \times 10^{-5}` m s:math:`^{-1}`
+* Surface sensible heat flux: :math:`8 \times 10^{-3}` K m :math:`\mathrm{s}^{-1}`
+* Surface latent heat flux: :math:`5.2 \times 10^{-5}` m :math:`\mathrm{s}^{-1}`
 * Surface roughness length: :math:`z_0=0.0002` m
 * Rayleigh damping layer: uppermost :math:`500` m of the domain
 * Initial perturbations: :math:`\pm 0.1` K
@@ -24,16 +24,15 @@ Input parameters
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
 * Time period: :math:`6` h
-* Initital conditions: vertical profiles of :math:`u`, :math:`q_v`, and :math:`SGSTKE` as specified in Siebesma et al. (2003)
+* Initital conditions: vertical profiles of :math:`u`, :math:`q_v`, and SGSTKE as specified in Siebesma et al. (2003)
 * Large-scale forcings: vertical profiles of subsidence and horizontal advection of potential temperature and water vapor as specified in Siebesma et al. (2003)
 
 Execute FastEddy
 ----------------
 
 This case requires specific customization of the initial conditions. We do that using python to modify the initial condition netCDF file. In order to run the BOMEX case the following sequence of steps has to be executed:
-
 * Create a folder named "output_pre" under your running directory and run the case "Example04_BOMEX_pre.in" for 1 timestep to create an initial file with the appropriate grid (FE_BOMEX_pre.0).
-* Create a folder named "initial" under your running directory and run the Jupyter notebook "FE_BOMEX_InitialCondPrep.ipynb" providing the path to your run directory under the :math:`path_sim` variable. This will create the FastEddy inital condition file "./initial/FE_BOMEX.0".
+* Create a folder named "initial" under your running directory and run the Jupyter notebook "FE_BOMEX_InitialCondPrep.ipynb" providing the path to your run directory under the "path_sim" variable. This will create the FastEddy inital condition file "./initial/FE_BOMEX.0".
 * Create a folder named 'output' under your running directory and run the case "Example04_BOMEX.in" using the previously created inital condition file.
 
 Visualize the output
@@ -53,7 +52,7 @@ Vertical profiles of potential temperature (:math:`\theta`), water vapor (:math:
   :width: 900
   :alt: Alternative text
 
-Vertical profiles of turbulence kinetic energy (TKE), vertical velocity variance (), and vertical turbulent fluxes of zonal momentum (), water vapor (), liquid cloud, and virtual potential temperature (). Profiles are averaged for the last 3 hr (:math:`t = 180–360` min) and perturbations are computed as the departure from horizontal slab averages. These turbulence quantities are the sum of resolved and subgrid-scale components.
+Vertical profiles of turbulence kinetic energy (TKE), vertical velocity variance (:math:`\sigma^2_w`), and vertical turbulent fluxes of zonal momentum (:math:`\langle u'w' \rangle`), water vapor (:math:`\langle w'q_v' \rangle`), liquid cloud, and virtual potential temperature (:math:`\langle w'q_l' \rangle`). Profiles are averaged for the last 3 hr (:math:`t = 180–360` min) and perturbations are computed as the departure from horizontal slab averages. These turbulence quantities are the sum of resolved and subgrid-scale components.
 
 .. image:: ../images/VerticalProfilesTurb.png
   :width: 1200
