@@ -6,7 +6,9 @@ Instructions
 * Re-run the neutral case with :math:`z_0=0.3` m. Re-make all plots and discuss the differences between the control case. 
 * Re-run the neutral case with the first order upwind advection scheme. Re-make all plots and discuss the differences between the control case. Why is the first order scheme a bad choice? 
 * Re-run the stable case with a surface cooling rate of :math:`-0.5` K/h. Re-make all plots and discuss the differences between the control case. 
-* Re-run the stable case using half of the GPUs used in the control simulation. How much slower does the case run? 
+* Re-run the stable case using half of the GPUs used in the control simulation. How much slower does the case run?
+
+* Re-run the BOMEX case with a higher-order advection for water vapor (moistureAdvSelectorQv = 3). What is the impact of the increased effective resolution on dynamical, thermodynamical and microphysical quantities, along with turbulence variability and fluxes? How does that change influce the comparison to the other BOMEX LES models?
 
 .. only
 

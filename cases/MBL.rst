@@ -26,3 +26,43 @@ Input parameters
 * Time period: :math:`6` h
 * Initital conditions: vertical profiles of :math:`u`, :math:`q_v`, and :math:`SGSTKE` as specified in Siebesma et al. (2003)
 * Large-scale forcings: vertical profiles of subsidence and horizontal advection of potential temperature and water vapor as specified in Siebesma et al. (2003)
+
+Execute FastEddy
+----------------
+
+This case requires specific customization of the initial conditions. We do that using python to modify the initial condition netCDF file. In order to run the BOMEX case the following sequence of steps has to be executed:
+
+* Create a folder named "output_pre" under your running directory and run the case "Example04_BOMEX_pre.in" for 1 timestep to create an initial file with the appropriate grid (FE_BOMEX_pre.0).
+* Create a folder named "initial" under your running directory and run the Jupyter notebook "FE_BOMEX_InitialCondPrep.ipynb" providing the path to your run directory under the :math:`path_sim` variable. This will create the FastEddy inital condition file "./initial/FE_BOMEX.0".
+* Create a folder named 'output' under your running directory and run the case "Example04_BOMEX.in" using the previously created inital condition file.
+
+Visualize the output
+--------------------
+
+Open the Jupyter notebook entitled "FE_Postrocessing_Example04_BOMEX.ipynb" and execute it.
+
+Time evolution of domain averaged total cloud cover (:math:`\alpha_c`) and liquid water path (LWP):
+
+.. image:: ../images/TimeEvolution_cldthres0.01.png
+     :width: 1200
+  :alt: Alternative text
+
+Vertical profiles of potential temperature (:math:`\theta`), water vapor (:math:`q_v`), horizontal velocity components (:math:`u`, :math:`v`), and liquid content (:math:`q_l`). Thin black dashed lines correspond to the initial conditions. Profiles are averaged for the last 3 hr (:math:`t = 180-360` min) and over horizontal domain slabs:
+
+.. image:: ../images/VerticalProfiles.png
+     :width: 900
+  :alt: Alternative text
+
+Vertical profiles of turbulence kinetic energy (TKE), vertical velocity variance (), and vertical turbulent fluxes of zonal momentum (), water vapor (), liquid cloud, and virtual potential temperature (). Profiles are averaged for the last 3 hr (:math:`t = 180–360` min) and perturbations are computed as the departure from horizontal slab averages. These turbulence quantities are the sum of resolved and subgrid-scale components.
+
+.. image:: ../images/VerticalProfilesTurb.png
+        :width: 1200
+  :alt: Alternative text
+
+Analyze the output
+------------------
+
+* Using the time series of cloud properties, could you identify when the simulated shallow cumulus cloud deck has reached quasi-eqilibrium?
+* What is the effect of boundary-layer turbulence to the mean profiles of momentum?
+* Identify the vertical extent of the cloud layer.
+* Which of the turbulent vertical transport terms is responsible for the resulting vertical liquid cloud distribution?
