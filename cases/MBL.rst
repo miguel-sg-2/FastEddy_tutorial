@@ -24,5 +24,5 @@ Input parameters
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
 * Time period: :math:`6` h
-* Initital conditions: vertical profiles of :math:`u`,:math:`q_v`, and :math:`SGSTKE` as specified in Siebesma et al. (2003)
+* Initital conditions: vertical profiles of :math:`u`, :math:`q_v`, and :math:`SGSTKE` as specified in Siebesma et al. (2003)
 * Large-scale forcings: vertical profiles of subsidence and horizontal advection of potential temperature and water vapor as specified in Siebesma et al. (2003)
