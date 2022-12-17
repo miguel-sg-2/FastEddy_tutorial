@@ -31,6 +31,7 @@ Execute FastEddy
 ----------------
 
 This case requires specific customization of the initial conditions. We do that using python to modify the initial condition netCDF file. In order to run the BOMEX case the following sequence of steps has to be executed:
+
 * Create a folder named "output_pre" under your running directory and run the case "Example04_BOMEX_pre.in" for 1 timestep to create an initial file with the appropriate grid (FE_BOMEX_pre.0).
 * Create a folder named "initial" under your running directory and run the Jupyter notebook "FE_BOMEX_InitialCondPrep.ipynb" providing the path to your run directory under the "path_sim" variable. This will create the FastEddy inital condition file "./initial/FE_BOMEX.0".
 * Create a folder named 'output' under your running directory and run the case "Example04_BOMEX.in" using the previously created inital condition file.
