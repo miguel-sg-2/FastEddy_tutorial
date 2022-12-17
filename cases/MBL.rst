@@ -10,13 +10,13 @@ Input parameters
 * Isotropic grid spacings: :math:`[dx,dy,dz]=[100,100,40]` m
 * Domain size: :math:`[15.2 \times 14.6 \times 4.9]` km
 * Model time step: :math:`0.075` s
-* Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m :math:`\textrm{s}^{-1}`
+* Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m :math:`\mbox{s}^{-1}`
 * Advection schemes: 5th-order upwind (dry dynamics), 3rd-order upwind (water vapor), and 3rd-order WENO (liquid water)
 * Time scheme: 3rd-order Runge Kutta
 * Latitude: :math:`14.94^{\circ}` N
 * Surface potential temperature: :math:`299.1` K
-* Surface sensible heat flux: :math:`8 \times 10^{-3}` K m :math:`\textrm{s}^{-1}`
-* Surface latent heat flux: :math:`5.2 \times 10^{-5}` m :math:`\textrm{s}^{-1}`
+* Surface sensible heat flux: :math:`8 \times 10^{-3}` K m :math:`\mbox{s}^{-1}`
+* Surface latent heat flux: :math:`5.2 \times 10^{-5}` m :math:`\mbox{s}^{-1}`
 * Surface roughness length: :math:`z_0=0.0002` m
 * Rayleigh damping layer: uppermost :math:`500` m of the domain
 * Initial perturbations: :math:`\pm 0.1` K
