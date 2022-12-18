@@ -63,7 +63,7 @@ Mean (domain horizontal average) vertical profiles of state variables at :math:`
   :width: 750
   :alt: Alternative text
  
-Horizontally-averaged vertical profiles of turbulence quantities at :math:`t=7` h (FE_NBL.630000) [perturbations are computed at each time instance from horizontal-slab means, then averaged horitontally and over the previous 1-hour mean]:
+Horizontally-averaged vertical profiles of turbulence quantities at :math:`t=6-7` h [perturbations are computed at each time instance from horizontal-slab means, then averaged horitontally and over the previous 1-hour mean]:
 
 .. image:: ../images/TURB-PROF-neutral.png
   :width: 1200
