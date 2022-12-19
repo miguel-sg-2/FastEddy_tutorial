@@ -11,7 +11,6 @@ import matplotlib.colors as mcolors
 import scipy.fftpack as fftpack
 from scipy import interpolate
 
-# DEF1
 def check_imports():
    import pkg_resources
    
@@ -28,7 +27,6 @@ def check_imports():
    for r in requirements:
     print("{}=={}".format(*r))
 
-# DEF1
 def get_imports():
     import types
     for name, val in globals().items():
@@ -54,18 +52,7 @@ def get_imports():
 
         yield name
 
-# DEF2
-def test_function(FE_xr):
-    
-    ust = np.squeeze(FE_xr.fricVel.isel(time=0).values)
-    ust_mean = np.mean(np.mean(ust,1),0)
-    
-    print('Executing test_function: ust_mean =',ust_mean)
-    
-    return ust_mean
-
-# DEF3
-def mean_profiles(FE_xr):
+def compute_mean_profiles(FE_xr):
     
     u_3d = np.squeeze(FE_xr.u.isel(time=0).values)
     v_3d = np.squeeze(FE_xr.v.isel(time=0).values)
@@ -80,7 +67,6 @@ def mean_profiles(FE_xr):
     th_1d = np.mean(np.mean(th_3d,axis=2),axis=1)
     z_1d = np.mean(np.mean(z_3d,axis=2),axis=1)
 
-    #ws_1d = np.sqrt(np.power(u_1d,2.0)+np.power(v_1d,2.0))
     for kk in range(0,Nz):
         wd_tmp = math.atan2(-u_1d[kk],-v_1d[kk]) * 180.0 / np.pi
         if (wd_tmp<0.0):
@@ -96,9 +82,14 @@ def mean_profiles(FE_xr):
     
     return array_out
 
-# DEF4
 def plot_XY_UVWTHETA(case, case_open, zChoose, save_plot_opt, path_figure):
 
+    zVect = case_open.zPos.isel(time=0,xIndex=0,yIndex=0).values
+    z_diff = np.abs(zVect - zChoose)
+    zgp = np.where(z_diff==np.amin(z_diff))
+    zgp = zgp[0]
+    zChoose = zgp[0]
+    
     ufield = case_open.u.isel(time=0).values
     vfield = case_open.v.isel(time=0).values
     wfield = case_open.w.isel(time=0).values
@@ -106,24 +97,6 @@ def plot_XY_UVWTHETA(case, case_open, zChoose, save_plot_opt, path_figure):
     xPos = case_open.xPos.isel(time=0,zIndex=zChoose).values
     yPos = case_open.yPos.isel(time=0,zIndex=zChoose).values
     zPos = case_open.zPos.isel(time=0,zIndex=zChoose).values
-    
-    if case == 'neutral':
-        xticks_vals=[0,3.2,6.4,9.6,12.8]
-        xticks_ticks=['0','3.2','6.4','9.6','12.8']
-        yticks_vals=[0,3.170,6.340,9.510,12.68]
-        yticks_ticks=['0','3.170','6.340','9.510','12.68']
-    elif case == 'convective':
-        xticks_vals=[0,1.5,3.0,4.5,6.0]
-        xticks_ticks=['0','1.5','3.0','4.5','6.0']
-        yticks_vals=[0,1.5,3.0,4.5,6.0]
-        yticks_ticks=['0','1.5','3.0','4.5','6.0']
-    elif case == 'stable':
-        xticks_vals=[0,0.10,0.20,0.3,0.4]
-        xticks_ticks=['0','0.1','0.2','0.3','0.4']
-        yticks_vals=[0,0.10,0.20,0.3,0.4]
-        yticks_ticks=['0','0.1','0.2','0.3','0.4']
-    else:
-        print("ERROR: INVALID CASE SELECTED")
         
     u_min = np.amin(np.amin(ufield))
     u_max = np.amax(np.amax(ufield))
@@ -157,13 +130,9 @@ def plot_XY_UVWTHETA(case, case_open, zChoose, save_plot_opt, path_figure):
     ###############
     ax=axs[0][0]
     im = ax.pcolormesh(xPos/1e3,yPos/1e3,ufield[zChoose,:,:],cmap=colormap1,linewidth=0,rasterized=True,vmin=u_min,vmax=u_max)
-    ax.set_xticks(xticks_vals)
-    ax.set_xticklabels(xticks_ticks)
-    ax.set_yticks(yticks_vals)
-    ax.set_yticklabels(yticks_ticks)
     ax.set_ylabel(r'$y$ $[\mathrm{km}]$',fontsize=fntSize)
     ax.set_xlabel(r'$x$ $[\mathrm{km}]$',fontsize=fntSize)
-    cbar=fig.colorbar(im, ax=ax) #, orientation='horizontal')
+    cbar=fig.colorbar(im, ax=ax)
 
     title_fig_0 = FE_legend[0]
     ax.set_title(title_fig_0,fontsize=fntSize)
@@ -173,13 +142,9 @@ def plot_XY_UVWTHETA(case, case_open, zChoose, save_plot_opt, path_figure):
     ###############
     ax=axs[1][0]
     im = ax.pcolormesh(xPos/1e3,yPos/1e3,vfield[zChoose,:,:],cmap=colormap1,linewidth=0,rasterized=True,vmin=v_min,vmax=v_max)
-    ax.set_xticks(xticks_vals)
-    ax.set_xticklabels(xticks_ticks)
-    ax.set_yticks(yticks_vals)
-    ax.set_yticklabels(yticks_ticks)
     ax.set_ylabel(r'$y$ $[\mathrm{km}]$',fontsize=fntSize)
     ax.set_xlabel(r'$x$ $[\mathrm{km}]$',fontsize=fntSize)
-    cbar=fig.colorbar(im, ax=ax) #, orientation='horizontal')
+    cbar=fig.colorbar(im, ax=ax)
 
     title_fig_1 = FE_legend[1]
     ax.set_title(title_fig_1,fontsize=fntSize)
@@ -190,13 +155,9 @@ def plot_XY_UVWTHETA(case, case_open, zChoose, save_plot_opt, path_figure):
     w_min=-1.0*w_max
     ax=axs[0][1]
     im = ax.pcolormesh(xPos/1e3,yPos/1e3,wfield[zChoose,:,:],cmap=colormap2,linewidth=0,rasterized=True,vmin=w_min,vmax=w_max)
-    ax.set_xticks(xticks_vals)
-    ax.set_xticklabels(xticks_ticks)
-    ax.set_yticks(yticks_vals)
-    ax.set_yticklabels(yticks_ticks)
     ax.set_ylabel(r'$y$ $[\mathrm{km}]$',fontsize=fntSize)
     ax.set_xlabel(r'$x$ $[\mathrm{km}]$',fontsize=fntSize)
-    cbar=fig.colorbar(im, ax=ax) #, orientation='horizontal')
+    cbar=fig.colorbar(im, ax=ax)
 
     title_fig_2 = FE_legend[2]
     ax.set_title(title_fig_2,fontsize=fntSize)
@@ -206,13 +167,9 @@ def plot_XY_UVWTHETA(case, case_open, zChoose, save_plot_opt, path_figure):
     ###############
     ax=axs[1][1]
     im = ax.pcolormesh(xPos/1e3,yPos/1e3,thetafield[zChoose,:,:],cmap=colormap3,linewidth=0,rasterized=True,vmin=t_min,vmax=t_max)
-    ax.set_xticks(xticks_vals)
-    ax.set_xticklabels(xticks_ticks)
-    ax.set_yticks(yticks_vals)
-    ax.set_yticklabels(yticks_ticks)
     ax.set_ylabel(r'$y$ $[\mathrm{km}]$',fontsize=fntSize)
     ax.set_xlabel(r'$x$ $[\mathrm{km}]$',fontsize=fntSize)
-    cbar=fig.colorbar(im, ax=ax) #, orientation='horizontal')
+    cbar=fig.colorbar(im, ax=ax)
 
     title_fig_3 = FE_legend[3]
     ax.set_title(title_fig_3,fontsize=fntSize)
@@ -221,37 +178,19 @@ def plot_XY_UVWTHETA(case, case_open, zChoose, save_plot_opt, path_figure):
         print(path_figure + fig_name)
         plt.savefig(path_figure + fig_name,dpi=300,bbox_inches = "tight")
 
-# DEF5
-def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
-    
-    numPlotsX=4
-    numPlotsY=1
+def plot_XZ_UVWTHETA(case, case_open, z_max, sizeX_XZ, sizeY_XZ, save_plot_opt, path_figure):
     
     ufield = case_open.u.isel(time=0).values
     vfield = case_open.v.isel(time=0).values
     wfield = case_open.w.isel(time=0).values
     thetafield = case_open.theta.isel(time=0).values
+    
+    [Npz,Npy,Npx] = ufield.shape
+    yChoose = int(Npy/2)
+    
     xPos = case_open.xPos.isel(time=0,yIndex=yChoose).values
     yPos = case_open.yPos.isel(time=0,yIndex=yChoose).values
     zPos = case_open.zPos.isel(time=0,yIndex=yChoose).values
-    
-    if case == 'neutral':
-        xticks_vals=[0,3.2,6.4,9.6,12.8]
-        xticks_ticks=['0','3.2','6.4','9.6','12.8']
-        yticks_vals=[0,0.287,0.574,0.861,1.148]
-        yticks_ticks=['0','0.287','0.574','0.861','1.148']
-    elif case == 'convective':
-        xticks_vals=[0,1.5,3.0,4.5,6.0]
-        xticks_ticks=['0','1.5','3.0','4.5','6.0']
-        yticks_vals=[0,0.729,1.458,2.187,2.916]
-        yticks_ticks=['0','0.729','1.458','2.187','2.916']
-    elif case == 'stable':
-        xticks_vals=[0,0.10,0.20,0.3,0.4]
-        xticks_ticks=['0','0.1','0.2','0.3','0.4']
-        yticks_vals=[0,0.243,0.486,0.729,0.972]
-        yticks_ticks=['0','0.243','0.486','0.729','0.972']
-    else:
-         print("ERROR: INVALID CASE SELECTED")
             
     u_min = np.amin(np.amin(ufield))
     u_max = np.amax(np.amax(ufield))
@@ -261,8 +200,6 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
     w_max = np.amax(np.amax(wfield))
     t_min = np.amin(np.amin(thetafield))
     t_max = np.amax(np.amax(thetafield))
-    
-    print(np.amax(zPos))
 
     fig_name = "UVWTHETA-XZ-"+case+".png"
     colormap1 = 'viridis'
@@ -271,6 +208,8 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
     FE_legend = [r'u [m/s] at y='+str(yPos[0,yChoose]/1e3)+' km',r'v [m/s] at y='+str(yPos[0,yChoose]/1e3)+' km',r'w [m/s] at y='+str(yPos[0,yChoose]/1e3)+' km', \
                  '\u03B8 [K] at y='+str(yPos[0,yChoose]/1e3)+' km']
     
+    numPlotsX=4
+    numPlotsY=1
     fntSize=20
     fntSize_title=22
     plt.rcParams['xtick.labelsize']=fntSize
@@ -278,20 +217,17 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
     plt.rcParams['axes.linewidth']=2.0
     plt.rcParams['pcolor.shading']='auto'
     
-    fig,axs = plt.subplots(numPlotsX,numPlotsY,sharey=False,sharex=False,figsize=(26,20))
+    fig,axs = plt.subplots(numPlotsX,numPlotsY,sharey=False,sharex=False,figsize=(sizeX_XZ,sizeY_XZ))
 
     ###############
     ### U plot ###
     ###############
     ax=axs[0]
     im = ax.pcolormesh(xPos/1e3,zPos/1e3,ufield[:,yChoose,:],cmap=colormap1,linewidth=0,rasterized=True,vmin=u_min,vmax=u_max)
-    ax.set_xticks(xticks_vals)
-    ax.set_xticklabels(xticks_ticks)
-    ax.set_yticks(yticks_vals)
-    ax.set_yticklabels(yticks_ticks)
+    ax.set_xticklabels([])
     ax.set_ylabel(r'$z$ $[\mathrm{km}]$',fontsize=fntSize)
-    #ax.set_xlabel(r'$x$ $[\mathrm{km}]$',fontsize=fntSize)
-    cbar=fig.colorbar(im, ax=ax) #, orientation='horizontal')
+    cbar=fig.colorbar(im, ax=ax)
+    ax.set_ylim(0.0,z_max/1e3)
 
     title_fig_0 = FE_legend[0]
     ax.set_title(title_fig_0,fontsize=fntSize)
@@ -301,13 +237,10 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
     ###############
     ax=axs[1]
     im = ax.pcolormesh(xPos/1e3,zPos/1e3,vfield[:,yChoose,:],cmap=colormap1,linewidth=0,rasterized=True,vmin=v_min,vmax=v_max)
-    ax.set_xticks(xticks_vals)
-    ax.set_xticklabels(xticks_ticks)
-    ax.set_yticks(yticks_vals)
-    ax.set_yticklabels(yticks_ticks)
+    ax.set_xticklabels([])
     ax.set_ylabel(r'$z$ $[\mathrm{km}]$',fontsize=fntSize)
-    #ax.set_xlabel(r'$x$ $[\mathrm{km}]$',fontsize=fntSize)
-    cbar=fig.colorbar(im, ax=ax) #, orientation='horizontal')
+    cbar=fig.colorbar(im, ax=ax)
+    ax.set_ylim(0.0,z_max/1e3)
 
     title_fig_1 = FE_legend[1]
     ax.set_title(title_fig_1,fontsize=fntSize)
@@ -318,13 +251,10 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
     w_min=-1.0*w_max
     ax=axs[2]
     im = ax.pcolormesh(xPos/1e3,zPos/1e3,wfield[:,yChoose,:],cmap=colormap2,linewidth=0,rasterized=True,vmin=w_min,vmax=w_max)
-    ax.set_xticks(xticks_vals)
-    ax.set_xticklabels(xticks_ticks)
-    ax.set_yticks(yticks_vals)
-    ax.set_yticklabels(yticks_ticks)
+    ax.set_xticklabels([])
     ax.set_ylabel(r'$z$ $[\mathrm{km}]$',fontsize=fntSize)
-    #ax.set_xlabel(r'$x$ $[\mathrm{km}]$',fontsize=fntSize)
-    cbar=fig.colorbar(im, ax=ax) #, orientation='horizontal')
+    cbar=fig.colorbar(im, ax=ax)
+    ax.set_ylim(0.0,z_max/1e3)
     
     title_fig_2 = FE_legend[2]
     ax.set_title(title_fig_2,fontsize=fntSize)
@@ -334,13 +264,10 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
     ###############
     ax=axs[3]
     im = ax.pcolormesh(xPos/1e3,zPos/1e3,thetafield[:,yChoose,:],cmap=colormap3,linewidth=0,rasterized=True,vmin=t_min,vmax=t_max)
-    ax.set_xticks(xticks_vals)
-    ax.set_xticklabels(xticks_ticks)
-    ax.set_yticks(yticks_vals)
-    ax.set_yticklabels(yticks_ticks)
     ax.set_ylabel(r'$z$ $[\mathrm{km}]$',fontsize=fntSize)
     ax.set_xlabel(r'$x$ $[\mathrm{km}]$',fontsize=fntSize)
-    cbar=fig.colorbar(im, ax=ax) #, orientation='horizontal')
+    cbar=fig.colorbar(im, ax=ax)
+    ax.set_ylim(0.0,z_max/1e3)
 
     title_fig_3 = FE_legend[3]
     ax.set_title(title_fig_3,fontsize=fntSize)
@@ -352,13 +279,12 @@ def plot_XZ_UVWTHETA(case, case_open, yChoose, save_plot_opt, path_figure):
         
           
 def plot_figureConfigure(numPlotsX,numPlotsY,sizeX,sizeY,styleFile='./feplot.mplstyle'):
-   plt.style.use(styleFile) #Must issue the style.use before creating a figure handle
-   fig,axs = plt.subplots(numPlotsX,numPlotsY,sharey=True,sharex=False,figsize=(sizeX,sizeY))
+    plt.style.use(styleFile) #Must issue the style.use before creating a figure handle
+    fig,axs = plt.subplots(numPlotsX,numPlotsY,sharey=True,sharex=False,figsize=(sizeX,sizeY))
   
-   return fig,axs
+    return fig,axs
 
-# DEF6
-def plot_mean_profiles(fig, axs, FE_xr, caseLabel, mean_key, save_plot_opt, path_figure, caseCnt=0):
+def plot_mean_profiles(fig, axs, FE_mean, z_max, caseLabel, save_plot_opt, path_figure, caseCnt):
 
     colores_v = []
     colores_v.append('darkblue')
@@ -371,14 +297,17 @@ def plot_mean_profiles(fig, axs, FE_xr, caseLabel, mean_key, save_plot_opt, path
     lineas_v.append('--')
     lineas_v.append('-.')
     lineas_v.append('.')
+    
+    fntSize=20
+    fntSize_title=22
+    fntSize_legend=16
+    plt.rcParams['xtick.labelsize']=fntSize
+    plt.rcParams['ytick.labelsize']=fntSize
+    plt.rcParams['axes.linewidth']=2.0
   
     y_min = 0.0
-    y_max = 700.0 # FE_mean_MO[FE_mean_MO.shape[0]-1,0]
- 
-    if caseCnt > 0:
-       lsIndex=1   #line style index
-    else:
-       lsIndex=0  #line style index
+    y_max = z_max
+    zPos = FE_mean[:,0]/1e3
           
     fig_name = "MEAN-PROF-"+caseLabel+".png"
     
@@ -386,54 +315,33 @@ def plot_mean_profiles(fig, axs, FE_xr, caseLabel, mean_key, save_plot_opt, path
     ### panel 0 ###
     ###############
     ax = axs[0]
-    im = ax.plot(np.sqrt((FE_xr['u']**2+FE_xr['v']**2)).mean(dim=('yIndex','xIndex')),
-                 FE_xr['zPos'][:,0,0]/1000.0,
-                 lineas_v[lsIndex],color=colores_v[caseCnt],label=caseLabel)
-    if caseLabel == 'neutral':
-        im2 = ax.plot((FE_xr['fricVel'].mean(dim=('yIndex','xIndex'))/0.4)*np.log(FE_xr['zPos'][:,0,0]/np.amax(FE_xr['z0m'][0,0])),
-                       FE_xr['zPos'][:,0,0]/1000.0,
-                       lineas_v[1],color=colores_v[3],label='log law')
-    ax.set_xlabel(r"$WS$ $[$m s$^{-1}]$") #,fontsize=fntSize)
-    ax.set_ylabel(r"$z$ $[$km$]$") #,fontsize=fntSize)
-    ax.grid(True)
+    im = ax.plot(np.sqrt(FE_mean[:,1]**2+FE_mean[:,2]**2),zPos,lineas_v[caseCnt],color=colores_v[caseCnt],label=caseLabel)
+    ax.set_xlabel(r"$U$ $[$m s$^{-1}]$",fontsize=fntSize_legend)
+    ax.set_ylabel(r"$z$ $[$km$]$",fontsize=fntSize)
+    ax.set_ylim(0.0,z_max/1e3)
     ax.legend(loc=2,edgecolor='white')
     
     ###############
     ### panel 1 ###
     ###############
     ax = axs[1]
-    im = ax.plot(FE_xr['u'].mean(dim=('yIndex','xIndex')),
-                 FE_xr['zPos'][:,0,0]/1000.0,
-                 lineas_v[lsIndex],color=colores_v[caseCnt],label=caseLabel)
-    ax.set_xlabel(r"$U$ $[$m s$^{-1}]$") #,fontsize=fntSize)
-    ax.grid(True)
-    
-    ###############
-    ### panel 2 ###
-    ###############
-    ax = axs[2]
-    im = ax.plot(FE_xr['v'].mean(dim=('yIndex','xIndex')),
-                 FE_xr['zPos'][:,0,0]/1000.0,
-                 lineas_v[lsIndex],color=colores_v[caseCnt],label=caseLabel)
-    ax.set_xlabel(r"$V$ $[$m s$^{-1}]$") #,fontsize=fntSize)
-    ax.grid(True)
+    im = ax.plot(FE_mean[:,3],zPos,lineas_v[caseCnt],color=colores_v[caseCnt],label=caseLabel)
+    ax.set_xlabel(r"$\phi$ $[^{\circ}]$",fontsize=fntSize)
+    ax.set_ylim(0.0,z_max/1e3)
     
     ###############
     ### panel 3 ###
     ###############
-    ax = axs[3]
-    im = ax.plot(FE_xr['theta'].mean(dim=('yIndex','xIndex')),
-                 FE_xr['zPos'][:,0,0]/1000.0,
-                 lineas_v[lsIndex],color=colores_v[caseCnt],label=caseLabel)
-    ax.set_xlabel(r"$\theta$ [K]") #,fontsize=fntSize)
-    ax.grid(True)
+    ax = axs[2]
+    im = ax.plot(FE_mean[:,4],zPos,lineas_v[caseCnt],color=colores_v[caseCnt],label=caseLabel)
+    ax.set_xlabel(r"$\theta$ [K]",fontsize=fntSize)
+    ax.set_ylim(0.0,z_max/1e3)
     
     if (save_plot_opt):
         print(path_figure + fig_name)
         plt.savefig(path_figure + fig_name,dpi=300,bbox_inches = "tight")
 
-# DEF6
-def compute_turb_profiles(FE_xr, array_out, case, save_plot_opt, path_figure):
+def compute_turb_profiles(FE_xr, array_out):
     
     u_3d = np.squeeze(FE_xr.u.isel(time=0).values)
     v_3d = np.squeeze(FE_xr.v.isel(time=0).values)
@@ -442,9 +350,9 @@ def compute_turb_profiles(FE_xr, array_out, case, save_plot_opt, path_figure):
     z_3d = np.squeeze(FE_xr.zPos.isel(time=0).values)
     tau13_3d = np.squeeze(FE_xr.Tau31.isel(time=0).values)
     tau23_3d = np.squeeze(FE_xr.Tau32.isel(time=0).values)
-    
-    tau33_3d = np.squeeze(FE_xr.Tau33.isel(time=0).values) #w^2 SGS
-    tauTH3_3d = np.squeeze(FE_xr.TauTH3.isel(time=0).values) #vertical heat flux SGS
+    tau33_3d = np.squeeze(FE_xr.Tau33.isel(time=0).values)
+    tauTH3_3d = np.squeeze(FE_xr.TauTH3.isel(time=0).values)
+    sgstke_3d = np.squeeze(FE_xr.TKE_0.isel(time=0).values)
 
     Nz = u_3d.shape[0]
     Ny = u_3d.shape[1]
@@ -495,18 +403,15 @@ def compute_turb_profiles(FE_xr, array_out, case, save_plot_opt, path_figure):
     vpwp_1d = np.mean(np.mean(vpwp,axis=2),axis=1)
     tau13_1d = np.mean(np.mean(tau13_3d,axis=2),axis=1)
     tau23_1d = np.mean(np.mean(tau23_3d,axis=2),axis=1)
-    
     tau33_1d = np.mean(np.mean(tau33_3d,axis=2),axis=1)
     tauTH3_1d = np.mean(np.mean(tauTH3_3d,axis=2),axis=1)
+    sgstke_1d = np.mean(np.mean(sgstke_3d,axis=2),axis=1)
     
     Upwp_1d = np.sqrt(np.power(upwp_1d,2.0)+np.power(vpwp_1d,2.0))
-    #Upwp_1d = np.mean(np.mean(np.sqrt(np.power(upwp,2.0)+np.power(vpwp,2.0)),axis=2),axis=1)
     wpwp_1d = np.mean(np.mean(wpwp,axis=2),axis=1)
     tke_1d = np.mean(np.mean(tke,axis=2),axis=1)
     thpwp_1d = np.mean(np.mean(thpwp,axis=2),axis=1)
-    #tau1323_1d = np.mean(np.mean(np.sqrt(np.power(tau13_3d,2.0)+np.power(tau23_3d,2.0)),axis=2),axis=1)
     tau1323_1d = np.sqrt(np.power(tau13_1d,2.0)+np.power(tau23_1d,2.0))
-    #tau1323_1d = np.mean(np.mean(tau13_3d,axis=2),axis=1) + np.mean(np.mean(tau23_3d,axis=2),axis=1)
     
     array_out = np.zeros([Nz,15])
     array_out[:,0] = z_1d
@@ -519,118 +424,95 @@ def compute_turb_profiles(FE_xr, array_out, case, save_plot_opt, path_figure):
     array_out[:,7] = tke_1d
     array_out[:,8] = thpwp_1d
     array_out[0:Nz-1,9] = 0.5*(tau1323_1d[0:Nz-1]+tau1323_1d[1:Nz])
-    array_out[:,10] = 0.5*(upup_1d*upup_1d+vpwp_1d*vpwp_1d+wpwp_1d*wpwp_1d)
-    #array_out[:,9] = tau1323_1d
-    array_out[:,11]=tau33_1d
-    array_out[:,12]=tauTH3_1d
+    array_out[:,10] = sgstke_1d
+    array_out[0:Nz-1,11] = 0.5*(tau33_1d[0:Nz-1]+tau33_1d[1:Nz])
+    array_out[0:Nz-1,12] = 0.5*(tauTH3_1d[0:Nz-1]+tauTH3_1d[1:Nz])
                                
     return array_out
-
-#DEF7
-def plot_turb_profiles(case, case_open, FE_turb_tmp, save_plot_opt, path_figure):
+        
+def plot_turb_profiles(fig, axs, case, FE_turb_tmp, z_max, save_plot_opt, path_figure):
 
     colores_v = []
     colores_v.append('darkblue')
     colores_v.append('darkred')
     colores_v.append('dodgerblue')
-    colores_v.append('orangered')
 
     lineas_v = []
     lineas_v.append('-')
     lineas_v.append('--')
     lineas_v.append('-.')
-    lineas_v.append('.')
   
-    y_min = 0.0
-    y_max = 700.0 # FE_mean_MO[FE_mean_MO.shape[0]-1,0]
-    zPos = case_open.zPos.isel(time=0,yIndex=0).values
-    
-    if case == 'neutral':
-        xticks_vals=[0,1.0,2.0,3.0,4.0]
-        xticks_ticks=['0','1.0','2.0','3.0','4.0']
-        yticks_vals=[0,0.287,0.574,0.861,1.148]
-        yticks_ticks=['0','0.287','0.574','0.861','1.148']
-    elif case == 'convective':
-        xticks_vals=[0,1.5,3.0,4.5,6.0]
-        xticks_ticks=['0','1.5','3.0','4.5','6.0']
-        yticks_vals=[0,0.729,1.458,2.187,2.916]
-        yticks_ticks=['0','0.729','1.458','2.187','2.916']
-    elif case == 'stable':
-        xticks_vals=[0,0.10,0.20,0.3,0.4]
-        xticks_ticks=['0','0.1','0.2','0.3','0.4']
-        yticks_vals=[0,0.243,0.486,0.729,0.972]
-        yticks_ticks=['0','0.243','0.486','0.729','0.972']
-    else:
-         print("ERROR: INVALID CASE SELECTED")
-            
-    yaxis_ticks = yticks_vals
-    yaxis_vals = yticks_ticks
-    yaxis_vals_empty = ['','','','','']
-
-
     fntSize=20
     fntSize_title=22
     fntSize_legend=16
     plt.rcParams['xtick.labelsize']=fntSize
     plt.rcParams['ytick.labelsize']=fntSize
     plt.rcParams['axes.linewidth']=2.0
-
-    numPlotsX=1
-    numPlotsY=4
-    fig,axs = plt.subplots(numPlotsX,numPlotsY,sharey=False,sharex=False,figsize=(28,12))
+    
+    y_min = 0.0
+    y_max = z_max
+    zPos = FE_turb_tmp[:,0]/1e3
 
     ###############
     ### panel 0 ###
     ###############
     ax = axs[0]
-    im2 = ax.plot(FE_turb_tmp[:,10]+FE_turb_tmp[:,7],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label='Total')
-    im2 = ax.plot(FE_turb_tmp[:,7],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[1],linewidth=2.5,markersize=8,label='Res.')
-    im2 = ax.plot(FE_turb_tmp[:,10],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[2],linewidth=2.5,markersize=8,label='SGS')
+    varplot_1 = FE_turb_tmp[:,7]+FE_turb_tmp[:,10]
+    varplot_2 = FE_turb_tmp[:,7]
+    varplot_3 = FE_turb_tmp[:,10]
+    im2 = ax.plot(varplot_1,zPos,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label='Total',zorder=2)
+    im2 = ax.plot(varplot_2,zPos,lineas_v[0],color=colores_v[2],linewidth=2.5,markersize=8,label='Res.',zorder=1)
+    im2 = ax.plot(varplot_3,zPos,lineas_v[0],color=colores_v[1],linewidth=2.5,markersize=8,label='SGS',zorder=0)
     ax.set_xlabel(r"TKE $[$m$^2$ s$^{-2}]$",fontsize=fntSize)
     ax.set_ylabel(r"$z$ $[$km$]$",fontsize=fntSize)
-    ax.legend(loc=1,prop={'size': fntSize},edgecolor='white')
-    ax.set_yticks(yaxis_ticks)
-    ax.grid(True)
-    ax.set_yticklabels(yaxis_vals,fontsize=fntSize)
+    ax.legend(loc=1,prop={'size': fntSize_legend},edgecolor='white')
+    ax.set_ylim(y_min/1e3,y_max/1e3)
     
     ###############
     ### panel 1 ###
     ###############
     ax = axs[1]
-    im2 = ax.plot(FE_turb_tmp[:,6]+FE_turb_tmp[:,11],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label=case)
+    varplot_1 = FE_turb_tmp[:,6]
+    im2 = ax.plot(varplot_1,zPos,lineas_v[0],color=colores_v[2],linewidth=2.5,markersize=8,label='Res.')
     ax.set_xlabel(r"$\sigma_w^2$ $[$m$^2$ s$^{-2}]$",fontsize=fntSize)
-    ax.set_yticks(yaxis_ticks)
-    ax.grid(True)
-    ax.set_yticklabels(yaxis_vals_empty,fontsize=fntSize)
+    ax.set_ylim(y_min/1e3,y_max/1e3)
     
     ###############
     ### panel 2 ###
     ###############
     ax = axs[2]
-    im2 = ax.plot(FE_turb_tmp[:,8]+FE_turb_tmp[:,12],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label=case)
-    im2 = ax.plot(FE_turb_tmp[:,8],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[1],linewidth=2.5,markersize=8,label=case)
-    im2 = ax.plot(FE_turb_tmp[:,12],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[2],linewidth=2.5,markersize=8,label=case)
-    ax.set_yticks(yaxis_ticks)
-    ax.grid(True)
-    ax.set_yticklabels(yaxis_vals_empty,fontsize=fntSize)
-    ax.set_xlabel(r"$\langle w'"+"\u03B8'"+r"\rangle$ $[$m K s$^{-1}]$",fontsize=fntSize) 
+    varplot_1 = FE_turb_tmp[:,8]+FE_turb_tmp[:,12]
+    varplot_2 = FE_turb_tmp[:,8]
+    varplot_3 = FE_turb_tmp[:,12]
+    im2 = ax.plot(varplot_1,zPos,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,zorder=2)
+    im2 = ax.plot(varplot_2,zPos,lineas_v[0],color=colores_v[2],linewidth=2.5,markersize=8,zorder=1)
+    im2 = ax.plot(varplot_3,zPos,lineas_v[0],color=colores_v[1],linewidth=2.5,markersize=8,zorder=0)
+    ax.set_xlabel(r"$\langle w' \theta' \rangle$ $[$K m s$^{-1}]$",fontsize=fntSize)
+    ax.set_ylim(y_min/1e3,y_max/1e3)
     
+    min_all = np.amin([varplot_1,varplot_2,varplot_3])
+    max_all = np.amax([varplot_1,varplot_2,varplot_3])
+    tol_plot = 1e-2
+    if (np.abs(min_all)<=tol_plot and np.abs(max_all)<=tol_plot):
+        max_abs = np.max([np.abs(min_all),np.abs(max_all)])
+        ax.set_xlim(-max_abs*10.0,max_abs*10.0)
+        
     ###############
     ### panel 3 ###
     ###############
     ax = axs[3]
-    im2 = ax.plot(FE_turb_tmp[:,5]+FE_turb_tmp[:,9],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,label=case+': total')
-    im2 = ax.plot(FE_turb_tmp[:,5],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[1],linewidth=2.5,markersize=8,label=case+': res.')
-    im2 = ax.plot(FE_turb_tmp[:,9],zPos[:,0]/1000.0,lineas_v[0],color=colores_v[2],linewidth=2.5,markersize=8,label=case+': SGS')
+    varplot_1 = FE_turb_tmp[:,5]+FE_turb_tmp[:,9]
+    varplot_2 = FE_turb_tmp[:,5]
+    varplot_3 = FE_turb_tmp[:,9]
+    im2 = ax.plot(varplot_1,zPos,lineas_v[0],color=colores_v[0],linewidth=2.5,markersize=8,zorder=2)
+    im2 = ax.plot(varplot_2,zPos,lineas_v[0],color=colores_v[2],linewidth=2.5,markersize=8,zorder=1)
+    im2 = ax.plot(varplot_3,zPos,lineas_v[0],color=colores_v[1],linewidth=2.5,markersize=8,zorder=0)
     ax.set_xlabel(r"$\sigma_w^2$ $[$m$^2$ s$^{-2}]$",fontsize=fntSize)
-    ax.set_yticks(yaxis_ticks)
-    ax.grid(True)
-    ax.set_yticklabels(yaxis_vals_empty,fontsize=fntSize)
     ax.set_xlabel(r"$\langle U' w' \rangle$ $[$m$^2$ s$^{-2}]$",fontsize=fntSize)
+    ax.set_ylim(y_min/1e3,y_max/1e3)
     
     fig_name = "TURB-PROF-"+case+".png"
     
     if (save_plot_opt==1):
         print(path_figure + fig_name)
         plt.savefig(path_figure + fig_name,dpi=300,bbox_inches = "tight")
-

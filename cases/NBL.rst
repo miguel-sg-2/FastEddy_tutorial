@@ -10,11 +10,11 @@ Input parameters
 ----------------
 
 * Number of grid points: :math:`[N_x,N_y,N_z]=[640,634,58]`
-* Isotropic grid spacings: :math:`[dx,dy,dz]=[20,20,20]` m
+* Isotropic grid spacings in the horizontal directions: :math:`[dx,dy]=[15,15]` m, vertical grid is :math:`dz=15` m at the surface and stretched with verticalDeformFactor :math:`=0.75`
 * Domain size: :math:`[6.4 \times 6.34 \times 1.148]` km
-* Model time step: 0.05 s
-* Advection scheme: 3rd order QUICK
-* Time scheme: 3rd order Runge Kutta
+* Model time step: :math:`0.04` s
+* Advection scheme: 5th-order upwind
+* Time scheme: 3rd-order Runge Kutta
 * Geostrophic wind: :math:`[U_g,V_g]=[10,0]` m/s
 * Latitude: :math:`54.0^{\circ}` N
 * Surface potential temperature: :math:`300` K
@@ -30,10 +30,10 @@ Input parameters
 * Surface roughness length: :math:`z_0=0.1` m
 * Rayleigh damping layer: uppermost :math:`400` m of the domain
 * Initial perturbations: :math:`\pm 0.25` K 
-* Depth of perturbations: :math:`350` m
+* Depth of perturbations: :math:`375` m
 * Top boundary condition: free slip
 * Lateral boundary conditions: periodic
-* Time period: 7 h
+* Time period: :math:`7` h
 
 Execute FastEddy
 ----------------
@@ -43,30 +43,30 @@ Here we will describe how to download the FastEddy package and run the model. Th
 Visualize the output
 --------------------
 
-Open the Jupyter notebook entitled "MAKE_FE_TUTORIAL_PLOTS.ipynb" and execute it. 
+Open the Jupyter notebook entitled "MAKE_FE_TUTORIAL_PLOTS.ipynb" and execute it using setting: case = 'neutral'.
 
-XY-plane views of instantaneous velocity components at t=7 h (FE_TEST.504000):
+XY-plane views of instantaneous velocity components at :math:`t=7` h (FE_NBL.630000):
 
 .. image:: ../images/UVWTHETA-XY-neutral.png
   :width: 1200
   :alt: Alternative text
   
-XZ-plane views of instantaneous velocity components at t=7 h (FE_TEST.504000):
+XZ-plane views of instantaneous velocity components at :math:`t=7` h (FE_NBL.630000):
 
 .. image:: ../images/UVWTHETA-XZ-neutral.png
-  :width: 600
+  :width: 900
   :alt: Alternative text
   
-Mean (domain horizontal average) vertical profiles of state variables at t=7 h (FE_TEST.504000):
+Mean (domain horizontal average) vertical profiles of state variables at :math:`t=7` h (FE_NBL.630000):
 
 .. image:: ../images/MEAN-PROF-neutral.png
-  :width: 600
+  :width: 750
   :alt: Alternative text
  
-Horizontally-averaged vertical profiles of turbulence quantities at t=7 h (FE_TEST.504000) [perturbations are computed at each point relative to the previous 1-hour mean, and then horizontally averaged]:
+Horizontally-averaged vertical profiles of turbulence quantities at :math:`t=6-7` h [perturbations are computed at each time instance from horizontal-slab means, then averaged horitontally and over the previous 1-hour mean]:
 
 .. image:: ../images/TURB-PROF-neutral.png
-  :width: 600
+  :width: 1200
   :alt: Alternative text 
 
 Analyze the output
