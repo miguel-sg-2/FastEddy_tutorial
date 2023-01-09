@@ -36,7 +36,7 @@ Input parameters
 Execute FastEddy
 ----------------
 
-Here we will describe how to download the FastEddy package and run the model. The package will include the executables, a script to install the executables in a directory structure, and other files such as the Jupyter notebooks.
+Run FastEddy using the input parameters file /examples/Example03_SBL.in. To execute FastEddy, follow the instructions here: https://github.com/NCAR/FastEddy-model/blob/main/README.md.
 
 Visualize the output
 --------------------
