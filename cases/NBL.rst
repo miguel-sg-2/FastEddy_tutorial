@@ -75,4 +75,4 @@ Analyze the output
 * Using the XY and XZ cross sections, discuss the characteristics (scale and magnitude) of the resolved turbulence.
 * What is the boundary layer height in the neutral case?
 * Using the vertical profile plots, explain why the boundary layer is neutral.
-* Other...
+
