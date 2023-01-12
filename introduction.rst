@@ -19,6 +19,6 @@ Required tutorial resources including input files, python utilities and Jupyter 
 Software and computing requirements
 ===================================
 
-Computing resources with at least four general purpose graphic processing units are recommended to carry out the test cases. System must be enabled with python and Jupyter notebook packages. Add other requirements (compilers, libraries, etc).
+Computing resources with at least four general purpose graphical processing units are recommended to carry out the test cases. System must be enabled with python and Jupyter notebook packages. Add other requirements (compilers, libraries, etc).
 
 Instructions on how to build and run FastEddy on NCAR's Casper architecture https://github.com/NCAR/FastEddy-model/blob/main/README.md.
